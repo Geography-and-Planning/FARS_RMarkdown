@@ -1,6 +1,6 @@
 ---
 title: "FARS Report"
-author: "Zhanchao Yang, XianLu Lee"
+author: "Zhanchao Yang, Xian Lu Lee"
 date: "`r Sys.Date()`"
 output: html_document
 ---

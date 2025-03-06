@@ -1,0 +1,31 @@
+Metro Area,County,FIPS Code
+"Phoenix-Mesa-Chandler, AZ",Maricopa County,04013
+"San Francisco-Oakland-Fremont, CA",San Francisco County,06075
+"Fresno, CA",Fresno County,06019
+"Bakersfield-Delano, CA",Kern County,06029
+"Los Angeles-Long Beach-Anaheim, CA",Los Angeles County,06037
+"Riverside-San Bernardino-Ontario, CA",Riverside County,06065
+"San Diego-Chula Vista-Carlsbad, CA",San Diego County,06073
+"San Jose-Sunnyvale-Santa Clara, CA",Santa Clara County,06085
+"Philadelphia-Camden-Wilmington, PA-NJ-DE-MD",Philadelphia County,42101
+"Washington-Arlington-Alexandria, DC-VA-MD-WV",District of Columbia,11001
+"Miami-Fort Lauderdale-West Palm Beach, FL",Miami-Dade County,12086
+"Jacksonville, FL",Duval County,12031
+"Tampa-St. Petersburg-Clearwater, FL",Hillsborough County,12057
+"Orlando-Kissimmee-Sanford, FL",Orange County,12095
+"Atlanta-Sandy Springs-Roswell, GA",Fulton County,13121
+"Chicago-Naperville-Elgin, IL-IN",Cook County,17031
+"St. Louis, MO-IL",St. Louis County,29189
+"Indianapolis-Carmel-Greenwood, IN",Marion County,18097
+"Detroit-Warren-Dearborn, MI",Wayne County,26163
+"Minneapolis-St. Paul-Bloomington, MN-WI",Hennepin County,27053
+"Las Vegas-Henderson-North Las Vegas, NV",Clark County,32003
+"New York-Newark-Jersey City, NY-NJ",New York County,36061
+"Columbus, OH",Columbus County,37047
+"San Antonio-New Braunfels, TX",Bexar County,48029
+"Houston-Pasadena-The Woodlands, TX",Harris County,48201
+"Dallas-Fort Worth-Arlington, TX",Dallas County,48113
+"McAllen-Edinburg-Mission, TX",Hidalgo County,48215
+"Salt Lake City-Murray, UT",Salt Lake County,49035
+"Seattle-Tacoma-Bellevue, WA",King County,53033
+"Milwaukee-Waukesha, WI",Milwaukee County,55079

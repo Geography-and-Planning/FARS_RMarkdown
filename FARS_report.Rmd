@@ -16,7 +16,46 @@ library(tidyverse)
 library(sf)
 library(dplyr)
 library(readxl)
+```
 
+```{r}
+# Youth fatility number by county, in 2017-2019, 2021-2022)
+master<-read.csv("data/mastersheetFARS.csv")%>%
+  filter(YEAR>2016 & YEAR!=2020)
+master<-master%>%
+  mutate(county_code= sprintf("%02d%03d", master$STATE, master$COUNTY))
+
+master<-master%>%
+  filter(AGE_CATEGORY<5)
+
+master<-master%>%
+  group_by(county_code)%>%
+  summarise(fatality_count=sum(fatality_count))
+```
+
+```{r}
+# aggregate fatality number by MSA 
+msa<- read_excel("data/cbsa_list.xlsx")%>%
+  filter(`Metropolitan/Micropolitan Statistical Area`=="Metropolitan Statistical Area")
+
+msa$`FIPS State Code`<- as.numeric(msa$`FIPS State Code`)
+msa$`FIPS County Code`<- as.numeric(msa$`FIPS County Code`)
+msa$GEOID<- sprintf("%02d%03d", msa$`FIPS State Code`, msa$`FIPS County Code`)
+
+msa<- msa%>%
+  rename("name"=`CBSA Title`, "cbsa_code"=`CBSA Code`)%>%
+  select(name, cbsa_code, GEOID)
+
+msa_fatality<- master%>%
+  left_join(msa, by=c("county_code"="GEOID"))%>%
+  filter(!is.na(cbsa_code))
+
+msa_fatality<-msa_fatality%>%
+  group_by(cbsa_code, name)%>%
+  summarise(fatality_count=sum(fatality_count))
+```
+
+```{r}
 fatality_county<- read.csv("./data/fullwithrate.csv") %>% 
  mutate(GEOID=str_pad(GEOID, 5, pad = "0")) %>% 
    mutate(FIPS.State.Code=substr(GEOID,1,nchar(GEOID)-3),

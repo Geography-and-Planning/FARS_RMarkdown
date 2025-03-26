@@ -16,6 +16,68 @@ library(tidyverse)
 library(sf)
 library(dplyr)
 library(readxl)
+library(duckdb)
+```
+
+```{r}
+con <- dbConnect(duckdb::duckdb(), dbdir = "data/raw_data.duckdb")
+
+dbListTables(con)
+
+# Note here: I changed the age group matches the ACS
+query <- "
+  SELECT 
+    YEAR,
+    STATE,
+    COUNTY,
+    CASE 
+      WHEN age < 5 THEN 1
+      WHEN age >= 5 AND age < 10 THEN 2
+      WHEN age >= 10 AND age < 15 THEN 3
+      WHEN age >= 15 AND age < 18 THEN 4
+      WHEN age >= 18 AND age < 20 THEN 5
+      WHEN age >= 20 AND age < 200 THEN 6
+      WHEN age >= 200 THEN 7
+      ELSE NULL
+    END AS AGE_CATEGORY,
+    COUNT(*) AS fatality_count
+  FROM (
+    SELECT '2010' AS YEAR, state AS STATE, county AS COUNTY, age, INJ_SEV FROM person2010
+    UNION ALL
+    SELECT '2011' AS YEAR, state AS STATE, county AS COUNTY, age, INJ_SEV FROM person2011
+    UNION ALL
+    SELECT '2012' AS YEAR, state AS STATE, county AS COUNTY, age, INJ_SEV FROM person2012
+    UNION ALL
+    SELECT '2013' AS YEAR, state AS STATE, county AS COUNTY, age, INJ_SEV FROM person2013
+    UNION ALL
+    SELECT '2014' AS YEAR, state AS STATE, county AS COUNTY, age, INJ_SEV FROM person2014
+    UNION ALL
+    SELECT '2015' AS YEAR, state AS STATE, county AS COUNTY, age, INJ_SEV FROM person2015
+    UNION ALL
+    SELECT '2016' AS YEAR, state AS STATE, county AS COUNTY, age, INJ_SEV FROM person2016
+    UNION ALL
+    SELECT '2017' AS YEAR, state AS STATE, county AS COUNTY, age, INJ_SEV FROM person2017
+    UNION ALL
+    SELECT '2018' AS YEAR, state AS STATE, county AS COUNTY, age, INJ_SEV FROM person2018
+    UNION ALL
+    SELECT '2019' AS YEAR, state AS STATE, county AS COUNTY, age, INJ_SEV FROM person2019
+    UNION ALL
+    SELECT '2020' AS YEAR, state AS STATE, county AS COUNTY, age, INJ_SEV FROM person2020
+    UNION ALL
+    SELECT '2021' AS YEAR, state AS STATE, county AS COUNTY, age, INJ_SEV FROM person2021
+    UNION ALL
+    SELECT '2022' AS YEAR, state AS STATE, county AS COUNTY, age, INJ_SEV FROM person2022
+  ) AS all_YEARs
+  WHERE INJ_SEV = 4
+  GROUP BY YEAR, STATE, COUNTY, AGE_CATEGORY
+  ORDER BY YEAR, STATE, COUNTY, AGE_CATEGORY
+"
+
+
+# Execute the query
+result <- dbGetQuery(con, query)
+
+#Note: we export the results as the csv of the mastersheetFARS.csv
 ```
 
 ```{r}
@@ -54,6 +116,98 @@ msa_fatality<-msa_fatality%>%
   group_by(cbsa_code, name)%>%
   summarise(fatality_count=sum(fatality_count))
 ```
+
+```{r}
+tot_pop2019<-get_acs(
+  geography= "Metropolitan Statistical Area/Micropolitan Statistical Area",
+  variables= c(tot_pop= "B01001_001"),
+  year= 2019,
+  survey= "acs1"
+)
+
+
+tot2018<-get_acs(
+  geography= "Metropolitan Statistical Area/Micropolitan Statistical Area",
+  variables= c(tot_pop= "B01001_001"),
+  year= 2018,
+  survey= "acs1"
+)
+
+tot2017<-get_acs(
+  geography= "Metropolitan Statistical Area/Micropolitan Statistical Area",
+  variables= c(tot_pop= "B01001_001"),
+  year= 2017,
+  survey= "acs1"
+)
+
+tot2021<-get_acs(
+  geography= "Metropolitan Statistical Area/Micropolitan Statistical Area",
+  variables= c(tot_pop= "B01001_001"),
+  year= 2021,
+  survey= "acs1"
+)
+
+tot2022<-get_acs(
+  geography= "Metropolitan Statistical Area/Micropolitan Statistical Area",
+  variables= c(tot_pop= "B01001_001"),
+  year= 2022,
+  survey= "acs1"
+)
+pop<- rbind(tot_pop2019, tot2018, tot2017, tot2021, tot2022)
+
+pop<-pop%>%
+  group_by(GEOID)%>%
+  summarise(tot_pop=sum(estimate))%>%
+  filter(GEOID %in% msa_fatality$cbsa_code)
+```
+
+```{r}
+children_2021<- get_acs(
+  geography= "Metropolitan Statistical Area/Micropolitan Statistical Area",
+  variables= "B09001_001E",
+  year= 2021,
+  survey= "acs1"
+)
+
+children_2022<- get_acs(
+  geography= "Metropolitan Statistical Area/Micropolitan Statistical Area",
+  variables= "B09001_001E",
+  year= 2022,
+  survey= "acs1"
+)
+
+children_2019<- get_acs(
+  geography= "Metropolitan Statistical Area/Micropolitan Statistical Area",
+  variables= "B09001_001E",
+  year= 2019,
+  survey= "acs1"
+)
+
+children_2018<- get_acs(
+  geography= "Metropolitan Statistical Area/Micropolitan Statistical Area",
+  variables= "B09001_001E",
+  year= 2018,
+  survey= "acs1"
+)
+
+children_2017<- get_acs(
+  geography= "Metropolitan Statistical Area/Micropolitan Statistical Area",
+  variables= "B09001_001E",
+  year= 2017,
+  survey= "acs1"
+)
+
+children_pop<- rbind(children_2022, children_2021, children_2019, children_2018, children_2017)
+
+children_pop<-children_pop%>%
+  group_by(GEOID)%>%
+  summarise(child_pop=sum(estimate))%>%
+  filter(GEOID %in% msa_fatality$cbsa_code)
+```
+
+
+
+
 
 ```{r}
 fatality_county<- read.csv("./data/fullwithrate.csv") %>% 

@@ -137,6 +137,37 @@ master_fatality<-left_join(msa_fatality, msa_fatality_children, by=c("cbsa_code"
 
 ```
 
+### Include in the write up
+
+**Important**: the biggest problem of those approach is that the ACS threshold is 65,000, so we can't get the data for the small counties. (mainly marginal county). So, the original method is not interesting
+
+```{r}
+years <- c(2017, 2018, 2019, 2021, 2022)
+
+# Retrieve ACS 1-year population data for each year and filter for the list of GEOIDs
+population_data <- lapply(years, function(yr) {
+  get_acs(
+    geography = "county",
+    variables = "B09001_001E",  # children pop
+    year = yr,
+    survey = "acs1"
+  ) %>%
+    filter(GEOID %in% msa$GEOID) %>%
+    mutate(year = yr)
+}) %>%
+  bind_rows()
+```
+```{r}
+# Aggregate population data by GEOID
+population_data_county <- population_data %>%
+  group_by(GEOID) %>%
+  summarise(under18 = sum(estimate))
+
+msa_check<- left_join(msa, population_data_county, by=c("GEOID"="GEOID"))
+```
+
+But, when got the MSA data, those county got count in.
+
 ```{r}
 tot_pop2019<-get_acs(
   geography= "Metropolitan Statistical Area/Micropolitan Statistical Area",

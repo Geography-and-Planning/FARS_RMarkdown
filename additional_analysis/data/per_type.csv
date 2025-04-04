@@ -1,0 +1,432 @@
+"cbsa","cbsa_name","age_group","PER_TYP","count"
+"12060","Atlanta-Sandy Springs-Roswell, GA",1,1,17
+"12060","Atlanta-Sandy Springs-Roswell, GA",1,2,24
+"12060","Atlanta-Sandy Springs-Roswell, GA",1,5,13
+"12060","Atlanta-Sandy Springs-Roswell, GA",1,6,5
+"12060","Atlanta-Sandy Springs-Roswell, GA",1,8,1
+"12060","Atlanta-Sandy Springs-Roswell, GA",1,10,1
+"12060","Atlanta-Sandy Springs-Roswell, GA",2,1,29
+"12060","Atlanta-Sandy Springs-Roswell, GA",2,2,28
+"12060","Atlanta-Sandy Springs-Roswell, GA",2,3,3
+"12060","Atlanta-Sandy Springs-Roswell, GA",2,5,27
+"12060","Atlanta-Sandy Springs-Roswell, GA",2,6,16
+"12060","Atlanta-Sandy Springs-Roswell, GA",2,8,6
+"12060","Atlanta-Sandy Springs-Roswell, GA",2,10,3
+"12060","Atlanta-Sandy Springs-Roswell, GA",2,11,3
+"12060","Atlanta-Sandy Springs-Roswell, GA",2,12,3
+"12060","Atlanta-Sandy Springs-Roswell, GA",2,13,2
+"12540","Bakersfield-Delano, CA",1,1,1
+"12540","Bakersfield-Delano, CA",1,2,1
+"12540","Bakersfield-Delano, CA",1,3,1
+"12540","Bakersfield-Delano, CA",1,5,1
+"12540","Bakersfield-Delano, CA",1,6,1
+"12540","Bakersfield-Delano, CA",1,8,1
+"12540","Bakersfield-Delano, CA",2,1,1
+"12540","Bakersfield-Delano, CA",2,2,1
+"12540","Bakersfield-Delano, CA",2,3,1
+"12540","Bakersfield-Delano, CA",2,5,1
+"12540","Bakersfield-Delano, CA",2,6,1
+"12540","Bakersfield-Delano, CA",2,8,1
+"12540","Bakersfield-Delano, CA",2,9,1
+"12540","Bakersfield-Delano, CA",2,12,1
+"16980","Chicago-Naperville-Elgin, IL-IN",1,1,11
+"16980","Chicago-Naperville-Elgin, IL-IN",1,2,11
+"16980","Chicago-Naperville-Elgin, IL-IN",1,3,1
+"16980","Chicago-Naperville-Elgin, IL-IN",1,5,6
+"16980","Chicago-Naperville-Elgin, IL-IN",1,6,3
+"16980","Chicago-Naperville-Elgin, IL-IN",1,8,1
+"16980","Chicago-Naperville-Elgin, IL-IN",1,12,2
+"16980","Chicago-Naperville-Elgin, IL-IN",2,1,13
+"16980","Chicago-Naperville-Elgin, IL-IN",2,2,13
+"16980","Chicago-Naperville-Elgin, IL-IN",2,3,4
+"16980","Chicago-Naperville-Elgin, IL-IN",2,5,13
+"16980","Chicago-Naperville-Elgin, IL-IN",2,6,8
+"16980","Chicago-Naperville-Elgin, IL-IN",2,7,2
+"16980","Chicago-Naperville-Elgin, IL-IN",2,8,5
+"16980","Chicago-Naperville-Elgin, IL-IN",2,9,1
+"16980","Chicago-Naperville-Elgin, IL-IN",2,10,2
+"16980","Chicago-Naperville-Elgin, IL-IN",2,11,2
+"16980","Chicago-Naperville-Elgin, IL-IN",2,12,2
+"18140","Columbus, OH",1,1,7
+"18140","Columbus, OH",1,2,8
+"18140","Columbus, OH",1,5,3
+"18140","Columbus, OH",1,6,1
+"18140","Columbus, OH",1,9,1
+"18140","Columbus, OH",1,12,1
+"18140","Columbus, OH",2,1,10
+"18140","Columbus, OH",2,2,9
+"18140","Columbus, OH",2,3,1
+"18140","Columbus, OH",2,4,1
+"18140","Columbus, OH",2,5,10
+"18140","Columbus, OH",2,6,5
+"18140","Columbus, OH",2,8,1
+"18140","Columbus, OH",2,9,1
+"18140","Columbus, OH",2,10,1
+"19100","Dallas-Fort Worth-Arlington, TX",1,1,11
+"19100","Dallas-Fort Worth-Arlington, TX",1,2,10
+"19100","Dallas-Fort Worth-Arlington, TX",1,3,1
+"19100","Dallas-Fort Worth-Arlington, TX",1,5,8
+"19100","Dallas-Fort Worth-Arlington, TX",1,6,3
+"19100","Dallas-Fort Worth-Arlington, TX",1,8,1
+"19100","Dallas-Fort Worth-Arlington, TX",2,1,11
+"19100","Dallas-Fort Worth-Arlington, TX",2,2,11
+"19100","Dallas-Fort Worth-Arlington, TX",2,3,6
+"19100","Dallas-Fort Worth-Arlington, TX",2,5,11
+"19100","Dallas-Fort Worth-Arlington, TX",2,6,8
+"19100","Dallas-Fort Worth-Arlington, TX",2,8,4
+"19100","Dallas-Fort Worth-Arlington, TX",2,9,1
+"19100","Dallas-Fort Worth-Arlington, TX",2,11,1
+"19100","Dallas-Fort Worth-Arlington, TX",2,13,1
+"19820","Detroit-Warren-Dearborn, MI",1,1,6
+"19820","Detroit-Warren-Dearborn, MI",1,2,5
+"19820","Detroit-Warren-Dearborn, MI",1,5,4
+"19820","Detroit-Warren-Dearborn, MI",1,6,3
+"19820","Detroit-Warren-Dearborn, MI",2,1,6
+"19820","Detroit-Warren-Dearborn, MI",2,2,6
+"19820","Detroit-Warren-Dearborn, MI",2,3,2
+"19820","Detroit-Warren-Dearborn, MI",2,5,6
+"19820","Detroit-Warren-Dearborn, MI",2,6,6
+"19820","Detroit-Warren-Dearborn, MI",2,8,2
+"19820","Detroit-Warren-Dearborn, MI",2,9,1
+"19820","Detroit-Warren-Dearborn, MI",2,11,1
+"19820","Detroit-Warren-Dearborn, MI",2,13,1
+"23420","Fresno, CA",1,1,2
+"23420","Fresno, CA",1,2,2
+"23420","Fresno, CA",1,5,2
+"23420","Fresno, CA",1,10,1
+"23420","Fresno, CA",2,1,2
+"23420","Fresno, CA",2,2,2
+"23420","Fresno, CA",2,3,1
+"23420","Fresno, CA",2,5,2
+"23420","Fresno, CA",2,6,2
+"23420","Fresno, CA",2,7,1
+"23420","Fresno, CA",2,8,1
+"23420","Fresno, CA",2,9,1
+"23420","Fresno, CA",2,12,1
+"26420","Houston-Pasadena-The Woodlands, TX",1,1,7
+"26420","Houston-Pasadena-The Woodlands, TX",1,2,10
+"26420","Houston-Pasadena-The Woodlands, TX",1,3,1
+"26420","Houston-Pasadena-The Woodlands, TX",1,5,5
+"26420","Houston-Pasadena-The Woodlands, TX",1,6,3
+"26420","Houston-Pasadena-The Woodlands, TX",1,8,1
+"26420","Houston-Pasadena-The Woodlands, TX",2,1,10
+"26420","Houston-Pasadena-The Woodlands, TX",2,2,10
+"26420","Houston-Pasadena-The Woodlands, TX",2,3,3
+"26420","Houston-Pasadena-The Woodlands, TX",2,4,1
+"26420","Houston-Pasadena-The Woodlands, TX",2,5,10
+"26420","Houston-Pasadena-The Woodlands, TX",2,6,9
+"26420","Houston-Pasadena-The Woodlands, TX",2,8,2
+"26420","Houston-Pasadena-The Woodlands, TX",2,9,1
+"26420","Houston-Pasadena-The Woodlands, TX",2,10,1
+"26420","Houston-Pasadena-The Woodlands, TX",2,11,1
+"26420","Houston-Pasadena-The Woodlands, TX",2,13,1
+"26900","Indianapolis-Carmel-Greenwood, IN",1,1,9
+"26900","Indianapolis-Carmel-Greenwood, IN",1,2,8
+"26900","Indianapolis-Carmel-Greenwood, IN",1,5,3
+"26900","Indianapolis-Carmel-Greenwood, IN",2,1,11
+"26900","Indianapolis-Carmel-Greenwood, IN",2,2,11
+"26900","Indianapolis-Carmel-Greenwood, IN",2,3,2
+"26900","Indianapolis-Carmel-Greenwood, IN",2,5,11
+"26900","Indianapolis-Carmel-Greenwood, IN",2,6,7
+"26900","Indianapolis-Carmel-Greenwood, IN",2,8,2
+"26900","Indianapolis-Carmel-Greenwood, IN",2,10,1
+"27260","Jacksonville, FL",1,1,3
+"27260","Jacksonville, FL",1,2,5
+"27260","Jacksonville, FL",1,5,3
+"27260","Jacksonville, FL",1,6,2
+"27260","Jacksonville, FL",1,8,1
+"27260","Jacksonville, FL",1,9,1
+"27260","Jacksonville, FL",1,11,1
+"27260","Jacksonville, FL",2,1,5
+"27260","Jacksonville, FL",2,2,5
+"27260","Jacksonville, FL",2,5,5
+"27260","Jacksonville, FL",2,6,4
+"27260","Jacksonville, FL",2,7,1
+"27260","Jacksonville, FL",2,8,1
+"27260","Jacksonville, FL",2,9,1
+"29820","Las Vegas-Henderson-North Las Vegas, NV",1,1,1
+"29820","Las Vegas-Henderson-North Las Vegas, NV",1,2,1
+"29820","Las Vegas-Henderson-North Las Vegas, NV",1,5,1
+"29820","Las Vegas-Henderson-North Las Vegas, NV",1,6,1
+"29820","Las Vegas-Henderson-North Las Vegas, NV",1,8,1
+"29820","Las Vegas-Henderson-North Las Vegas, NV",1,11,1
+"29820","Las Vegas-Henderson-North Las Vegas, NV",2,1,1
+"29820","Las Vegas-Henderson-North Las Vegas, NV",2,2,1
+"29820","Las Vegas-Henderson-North Las Vegas, NV",2,3,1
+"29820","Las Vegas-Henderson-North Las Vegas, NV",2,5,1
+"29820","Las Vegas-Henderson-North Las Vegas, NV",2,6,1
+"29820","Las Vegas-Henderson-North Las Vegas, NV",2,8,1
+"29820","Las Vegas-Henderson-North Las Vegas, NV",2,11,1
+"29820","Las Vegas-Henderson-North Las Vegas, NV",2,12,1
+"31080","Los Angeles-Long Beach-Anaheim, CA",1,1,2
+"31080","Los Angeles-Long Beach-Anaheim, CA",1,2,2
+"31080","Los Angeles-Long Beach-Anaheim, CA",1,3,1
+"31080","Los Angeles-Long Beach-Anaheim, CA",1,5,2
+"31080","Los Angeles-Long Beach-Anaheim, CA",1,6,2
+"31080","Los Angeles-Long Beach-Anaheim, CA",1,8,2
+"31080","Los Angeles-Long Beach-Anaheim, CA",1,10,1
+"31080","Los Angeles-Long Beach-Anaheim, CA",1,12,1
+"31080","Los Angeles-Long Beach-Anaheim, CA",2,1,2
+"31080","Los Angeles-Long Beach-Anaheim, CA",2,2,2
+"31080","Los Angeles-Long Beach-Anaheim, CA",2,3,2
+"31080","Los Angeles-Long Beach-Anaheim, CA",2,5,2
+"31080","Los Angeles-Long Beach-Anaheim, CA",2,6,2
+"31080","Los Angeles-Long Beach-Anaheim, CA",2,7,1
+"31080","Los Angeles-Long Beach-Anaheim, CA",2,8,2
+"31080","Los Angeles-Long Beach-Anaheim, CA",2,9,2
+"31080","Los Angeles-Long Beach-Anaheim, CA",2,10,1
+"31080","Los Angeles-Long Beach-Anaheim, CA",2,11,2
+"31080","Los Angeles-Long Beach-Anaheim, CA",2,12,2
+"32580","McAllen-Edinburg-Mission, TX",1,1,1
+"32580","McAllen-Edinburg-Mission, TX",1,2,1
+"32580","McAllen-Edinburg-Mission, TX",1,5,1
+"32580","McAllen-Edinburg-Mission, TX",1,6,1
+"32580","McAllen-Edinburg-Mission, TX",2,1,1
+"32580","McAllen-Edinburg-Mission, TX",2,2,1
+"32580","McAllen-Edinburg-Mission, TX",2,3,1
+"32580","McAllen-Edinburg-Mission, TX",2,5,1
+"32580","McAllen-Edinburg-Mission, TX",2,6,1
+"32580","McAllen-Edinburg-Mission, TX",2,8,1
+"33100","Miami-Fort Lauderdale-West Palm Beach, FL",1,1,3
+"33100","Miami-Fort Lauderdale-West Palm Beach, FL",1,2,3
+"33100","Miami-Fort Lauderdale-West Palm Beach, FL",1,3,2
+"33100","Miami-Fort Lauderdale-West Palm Beach, FL",1,5,3
+"33100","Miami-Fort Lauderdale-West Palm Beach, FL",1,6,3
+"33100","Miami-Fort Lauderdale-West Palm Beach, FL",1,8,2
+"33100","Miami-Fort Lauderdale-West Palm Beach, FL",1,9,2
+"33100","Miami-Fort Lauderdale-West Palm Beach, FL",1,12,1
+"33100","Miami-Fort Lauderdale-West Palm Beach, FL",2,1,3
+"33100","Miami-Fort Lauderdale-West Palm Beach, FL",2,2,3
+"33100","Miami-Fort Lauderdale-West Palm Beach, FL",2,3,3
+"33100","Miami-Fort Lauderdale-West Palm Beach, FL",2,5,3
+"33100","Miami-Fort Lauderdale-West Palm Beach, FL",2,6,3
+"33100","Miami-Fort Lauderdale-West Palm Beach, FL",2,7,1
+"33100","Miami-Fort Lauderdale-West Palm Beach, FL",2,8,3
+"33100","Miami-Fort Lauderdale-West Palm Beach, FL",2,9,3
+"33100","Miami-Fort Lauderdale-West Palm Beach, FL",2,11,2
+"33100","Miami-Fort Lauderdale-West Palm Beach, FL",2,12,1
+"33100","Miami-Fort Lauderdale-West Palm Beach, FL",2,13,1
+"33340","Milwaukee-Waukesha, WI",1,1,2
+"33340","Milwaukee-Waukesha, WI",1,2,3
+"33340","Milwaukee-Waukesha, WI",1,5,2
+"33340","Milwaukee-Waukesha, WI",1,6,1
+"33340","Milwaukee-Waukesha, WI",1,9,1
+"33340","Milwaukee-Waukesha, WI",2,1,4
+"33340","Milwaukee-Waukesha, WI",2,2,4
+"33340","Milwaukee-Waukesha, WI",2,5,3
+"33340","Milwaukee-Waukesha, WI",2,6,3
+"33340","Milwaukee-Waukesha, WI",2,8,1
+"33460","Minneapolis-St. Paul-Bloomington, MN-WI",1,1,9
+"33460","Minneapolis-St. Paul-Bloomington, MN-WI",1,2,10
+"33460","Minneapolis-St. Paul-Bloomington, MN-WI",1,5,4
+"33460","Minneapolis-St. Paul-Bloomington, MN-WI",1,6,4
+"33460","Minneapolis-St. Paul-Bloomington, MN-WI",2,1,15
+"33460","Minneapolis-St. Paul-Bloomington, MN-WI",2,2,14
+"33460","Minneapolis-St. Paul-Bloomington, MN-WI",2,3,1
+"33460","Minneapolis-St. Paul-Bloomington, MN-WI",2,5,13
+"33460","Minneapolis-St. Paul-Bloomington, MN-WI",2,6,10
+"33460","Minneapolis-St. Paul-Bloomington, MN-WI",2,8,3
+"33460","Minneapolis-St. Paul-Bloomington, MN-WI",2,9,1
+"33460","Minneapolis-St. Paul-Bloomington, MN-WI",2,10,1
+"33460","Minneapolis-St. Paul-Bloomington, MN-WI",2,11,1
+"33460","Minneapolis-St. Paul-Bloomington, MN-WI",2,13,1
+"35620","New York-Newark-Jersey City, NY-NJ",1,1,12
+"35620","New York-Newark-Jersey City, NY-NJ",1,2,18
+"35620","New York-Newark-Jersey City, NY-NJ",1,3,2
+"35620","New York-Newark-Jersey City, NY-NJ",1,5,16
+"35620","New York-Newark-Jersey City, NY-NJ",1,6,10
+"35620","New York-Newark-Jersey City, NY-NJ",1,7,1
+"35620","New York-Newark-Jersey City, NY-NJ",1,8,8
+"35620","New York-Newark-Jersey City, NY-NJ",1,9,1
+"35620","New York-Newark-Jersey City, NY-NJ",1,11,1
+"35620","New York-Newark-Jersey City, NY-NJ",2,1,22
+"35620","New York-Newark-Jersey City, NY-NJ",2,2,22
+"35620","New York-Newark-Jersey City, NY-NJ",2,3,2
+"35620","New York-Newark-Jersey City, NY-NJ",2,5,22
+"35620","New York-Newark-Jersey City, NY-NJ",2,6,18
+"35620","New York-Newark-Jersey City, NY-NJ",2,7,1
+"35620","New York-Newark-Jersey City, NY-NJ",2,8,11
+"35620","New York-Newark-Jersey City, NY-NJ",2,11,5
+"35620","New York-Newark-Jersey City, NY-NJ",2,13,1
+"36740","Orlando-Kissimmee-Sanford, FL",1,1,4
+"36740","Orlando-Kissimmee-Sanford, FL",1,2,4
+"36740","Orlando-Kissimmee-Sanford, FL",1,5,4
+"36740","Orlando-Kissimmee-Sanford, FL",1,6,4
+"36740","Orlando-Kissimmee-Sanford, FL",1,8,1
+"36740","Orlando-Kissimmee-Sanford, FL",2,1,4
+"36740","Orlando-Kissimmee-Sanford, FL",2,2,4
+"36740","Orlando-Kissimmee-Sanford, FL",2,3,2
+"36740","Orlando-Kissimmee-Sanford, FL",2,5,4
+"36740","Orlando-Kissimmee-Sanford, FL",2,6,4
+"36740","Orlando-Kissimmee-Sanford, FL",2,7,2
+"36740","Orlando-Kissimmee-Sanford, FL",2,8,2
+"36740","Orlando-Kissimmee-Sanford, FL",2,9,1
+"36740","Orlando-Kissimmee-Sanford, FL",2,11,1
+"36740","Orlando-Kissimmee-Sanford, FL",2,12,1
+"37980","Philadelphia-Camden-Wilmington, PA-NJ-DE-MD",1,1,11
+"37980","Philadelphia-Camden-Wilmington, PA-NJ-DE-MD",1,2,11
+"37980","Philadelphia-Camden-Wilmington, PA-NJ-DE-MD",1,3,1
+"37980","Philadelphia-Camden-Wilmington, PA-NJ-DE-MD",1,5,6
+"37980","Philadelphia-Camden-Wilmington, PA-NJ-DE-MD",1,6,4
+"37980","Philadelphia-Camden-Wilmington, PA-NJ-DE-MD",1,8,2
+"37980","Philadelphia-Camden-Wilmington, PA-NJ-DE-MD",2,1,11
+"37980","Philadelphia-Camden-Wilmington, PA-NJ-DE-MD",2,2,11
+"37980","Philadelphia-Camden-Wilmington, PA-NJ-DE-MD",2,3,2
+"37980","Philadelphia-Camden-Wilmington, PA-NJ-DE-MD",2,5,11
+"37980","Philadelphia-Camden-Wilmington, PA-NJ-DE-MD",2,6,9
+"37980","Philadelphia-Camden-Wilmington, PA-NJ-DE-MD",2,7,1
+"37980","Philadelphia-Camden-Wilmington, PA-NJ-DE-MD",2,8,3
+"37980","Philadelphia-Camden-Wilmington, PA-NJ-DE-MD",2,11,1
+"37980","Philadelphia-Camden-Wilmington, PA-NJ-DE-MD",2,12,1
+"37980","Philadelphia-Camden-Wilmington, PA-NJ-DE-MD",2,13,1
+"38060","Phoenix-Mesa-Chandler, AZ",1,1,2
+"38060","Phoenix-Mesa-Chandler, AZ",1,2,2
+"38060","Phoenix-Mesa-Chandler, AZ",1,5,2
+"38060","Phoenix-Mesa-Chandler, AZ",1,6,1
+"38060","Phoenix-Mesa-Chandler, AZ",1,8,2
+"38060","Phoenix-Mesa-Chandler, AZ",2,1,2
+"38060","Phoenix-Mesa-Chandler, AZ",2,2,2
+"38060","Phoenix-Mesa-Chandler, AZ",2,3,1
+"38060","Phoenix-Mesa-Chandler, AZ",2,5,2
+"38060","Phoenix-Mesa-Chandler, AZ",2,6,2
+"38060","Phoenix-Mesa-Chandler, AZ",2,7,1
+"38060","Phoenix-Mesa-Chandler, AZ",2,8,1
+"38060","Phoenix-Mesa-Chandler, AZ",2,9,1
+"38060","Phoenix-Mesa-Chandler, AZ",2,11,1
+"38060","Phoenix-Mesa-Chandler, AZ",2,12,1
+"40140","Riverside-San Bernardino-Ontario, CA",1,1,2
+"40140","Riverside-San Bernardino-Ontario, CA",1,2,2
+"40140","Riverside-San Bernardino-Ontario, CA",1,3,1
+"40140","Riverside-San Bernardino-Ontario, CA",1,5,2
+"40140","Riverside-San Bernardino-Ontario, CA",1,6,2
+"40140","Riverside-San Bernardino-Ontario, CA",1,8,2
+"40140","Riverside-San Bernardino-Ontario, CA",1,12,1
+"40140","Riverside-San Bernardino-Ontario, CA",1,13,1
+"40140","Riverside-San Bernardino-Ontario, CA",2,1,2
+"40140","Riverside-San Bernardino-Ontario, CA",2,2,2
+"40140","Riverside-San Bernardino-Ontario, CA",2,3,2
+"40140","Riverside-San Bernardino-Ontario, CA",2,4,1
+"40140","Riverside-San Bernardino-Ontario, CA",2,5,2
+"40140","Riverside-San Bernardino-Ontario, CA",2,6,2
+"40140","Riverside-San Bernardino-Ontario, CA",2,8,2
+"40140","Riverside-San Bernardino-Ontario, CA",2,9,1
+"40140","Riverside-San Bernardino-Ontario, CA",2,10,1
+"40140","Riverside-San Bernardino-Ontario, CA",2,11,1
+"40140","Riverside-San Bernardino-Ontario, CA",2,12,2
+"41180","St. Louis, MO-IL",1,1,9
+"41180","St. Louis, MO-IL",1,2,13
+"41180","St. Louis, MO-IL",1,5,5
+"41180","St. Louis, MO-IL",1,6,2
+"41180","St. Louis, MO-IL",2,1,15
+"41180","St. Louis, MO-IL",2,2,14
+"41180","St. Louis, MO-IL",2,3,1
+"41180","St. Louis, MO-IL",2,5,12
+"41180","St. Louis, MO-IL",2,6,5
+"41180","St. Louis, MO-IL",2,8,2
+"41180","St. Louis, MO-IL",2,9,4
+"41180","St. Louis, MO-IL",2,10,2
+"41180","St. Louis, MO-IL",2,11,1
+"41620","Salt Lake City-Murray, UT",1,1,1
+"41620","Salt Lake City-Murray, UT",1,2,2
+"41620","Salt Lake City-Murray, UT",1,3,1
+"41620","Salt Lake City-Murray, UT",1,5,2
+"41620","Salt Lake City-Murray, UT",1,6,1
+"41620","Salt Lake City-Murray, UT",1,8,1
+"41620","Salt Lake City-Murray, UT",2,1,2
+"41620","Salt Lake City-Murray, UT",2,2,2
+"41620","Salt Lake City-Murray, UT",2,5,2
+"41620","Salt Lake City-Murray, UT",2,6,1
+"41620","Salt Lake City-Murray, UT",2,8,2
+"41620","Salt Lake City-Murray, UT",2,12,1
+"41700","San Antonio-New Braunfels, TX",1,1,5
+"41700","San Antonio-New Braunfels, TX",1,2,6
+"41700","San Antonio-New Braunfels, TX",1,5,3
+"41700","San Antonio-New Braunfels, TX",2,1,8
+"41700","San Antonio-New Braunfels, TX",2,2,8
+"41700","San Antonio-New Braunfels, TX",2,4,2
+"41700","San Antonio-New Braunfels, TX",2,5,7
+"41700","San Antonio-New Braunfels, TX",2,6,2
+"41700","San Antonio-New Braunfels, TX",2,8,1
+"41700","San Antonio-New Braunfels, TX",2,13,1
+"41740","San Diego-Chula Vista-Carlsbad, CA",1,1,1
+"41740","San Diego-Chula Vista-Carlsbad, CA",1,2,1
+"41740","San Diego-Chula Vista-Carlsbad, CA",1,5,1
+"41740","San Diego-Chula Vista-Carlsbad, CA",1,6,1
+"41740","San Diego-Chula Vista-Carlsbad, CA",2,1,1
+"41740","San Diego-Chula Vista-Carlsbad, CA",2,2,1
+"41740","San Diego-Chula Vista-Carlsbad, CA",2,3,1
+"41740","San Diego-Chula Vista-Carlsbad, CA",2,5,1
+"41740","San Diego-Chula Vista-Carlsbad, CA",2,6,1
+"41740","San Diego-Chula Vista-Carlsbad, CA",2,8,1
+"41740","San Diego-Chula Vista-Carlsbad, CA",2,10,1
+"41740","San Diego-Chula Vista-Carlsbad, CA",2,11,1
+"41740","San Diego-Chula Vista-Carlsbad, CA",2,12,1
+"41860","San Francisco-Oakland-Fremont, CA",1,1,4
+"41860","San Francisco-Oakland-Fremont, CA",1,2,5
+"41860","San Francisco-Oakland-Fremont, CA",1,3,1
+"41860","San Francisco-Oakland-Fremont, CA",1,5,3
+"41860","San Francisco-Oakland-Fremont, CA",1,6,2
+"41860","San Francisco-Oakland-Fremont, CA",1,8,1
+"41860","San Francisco-Oakland-Fremont, CA",1,12,1
+"41860","San Francisco-Oakland-Fremont, CA",2,1,5
+"41860","San Francisco-Oakland-Fremont, CA",2,2,5
+"41860","San Francisco-Oakland-Fremont, CA",2,3,1
+"41860","San Francisco-Oakland-Fremont, CA",2,5,5
+"41860","San Francisco-Oakland-Fremont, CA",2,6,5
+"41860","San Francisco-Oakland-Fremont, CA",2,7,1
+"41860","San Francisco-Oakland-Fremont, CA",2,8,4
+"41860","San Francisco-Oakland-Fremont, CA",2,9,1
+"41940","San Jose-Sunnyvale-Santa Clara, CA",1,1,1
+"41940","San Jose-Sunnyvale-Santa Clara, CA",1,2,2
+"41940","San Jose-Sunnyvale-Santa Clara, CA",1,5,1
+"41940","San Jose-Sunnyvale-Santa Clara, CA",1,6,1
+"41940","San Jose-Sunnyvale-Santa Clara, CA",2,1,2
+"41940","San Jose-Sunnyvale-Santa Clara, CA",2,2,2
+"41940","San Jose-Sunnyvale-Santa Clara, CA",2,3,1
+"41940","San Jose-Sunnyvale-Santa Clara, CA",2,5,2
+"41940","San Jose-Sunnyvale-Santa Clara, CA",2,6,2
+"41940","San Jose-Sunnyvale-Santa Clara, CA",2,7,1
+"41940","San Jose-Sunnyvale-Santa Clara, CA",2,8,2
+"41940","San Jose-Sunnyvale-Santa Clara, CA",2,12,1
+"42660","Seattle-Tacoma-Bellevue, WA",1,1,3
+"42660","Seattle-Tacoma-Bellevue, WA",1,2,3
+"42660","Seattle-Tacoma-Bellevue, WA",1,5,3
+"42660","Seattle-Tacoma-Bellevue, WA",1,6,1
+"42660","Seattle-Tacoma-Bellevue, WA",1,8,1
+"42660","Seattle-Tacoma-Bellevue, WA",1,12,1
+"42660","Seattle-Tacoma-Bellevue, WA",2,1,3
+"42660","Seattle-Tacoma-Bellevue, WA",2,2,3
+"42660","Seattle-Tacoma-Bellevue, WA",2,5,3
+"42660","Seattle-Tacoma-Bellevue, WA",2,6,3
+"42660","Seattle-Tacoma-Bellevue, WA",2,8,2
+"42660","Seattle-Tacoma-Bellevue, WA",2,11,1
+"45300","Tampa-St. Petersburg-Clearwater, FL",1,1,4
+"45300","Tampa-St. Petersburg-Clearwater, FL",1,2,4
+"45300","Tampa-St. Petersburg-Clearwater, FL",1,5,4
+"45300","Tampa-St. Petersburg-Clearwater, FL",1,6,3
+"45300","Tampa-St. Petersburg-Clearwater, FL",1,8,1
+"45300","Tampa-St. Petersburg-Clearwater, FL",2,1,4
+"45300","Tampa-St. Petersburg-Clearwater, FL",2,2,4
+"45300","Tampa-St. Petersburg-Clearwater, FL",2,3,1
+"45300","Tampa-St. Petersburg-Clearwater, FL",2,5,4
+"45300","Tampa-St. Petersburg-Clearwater, FL",2,6,4
+"45300","Tampa-St. Petersburg-Clearwater, FL",2,8,3
+"45300","Tampa-St. Petersburg-Clearwater, FL",2,9,1
+"45300","Tampa-St. Petersburg-Clearwater, FL",2,11,3
+"45300","Tampa-St. Petersburg-Clearwater, FL",2,12,2
+"45300","Tampa-St. Petersburg-Clearwater, FL",2,13,3
+"47900","Washington-Arlington-Alexandria, DC-VA-MD-WV",1,1,11
+"47900","Washington-Arlington-Alexandria, DC-VA-MD-WV",1,2,13
+"47900","Washington-Arlington-Alexandria, DC-VA-MD-WV",1,5,8
+"47900","Washington-Arlington-Alexandria, DC-VA-MD-WV",1,6,3
+"47900","Washington-Arlington-Alexandria, DC-VA-MD-WV",1,8,2
+"47900","Washington-Arlington-Alexandria, DC-VA-MD-WV",1,11,1
+"47900","Washington-Arlington-Alexandria, DC-VA-MD-WV",2,1,21
+"47900","Washington-Arlington-Alexandria, DC-VA-MD-WV",2,2,20
+"47900","Washington-Arlington-Alexandria, DC-VA-MD-WV",2,3,1
+"47900","Washington-Arlington-Alexandria, DC-VA-MD-WV",2,5,21
+"47900","Washington-Arlington-Alexandria, DC-VA-MD-WV",2,6,11
+"47900","Washington-Arlington-Alexandria, DC-VA-MD-WV",2,8,4
+"47900","Washington-Arlington-Alexandria, DC-VA-MD-WV",2,9,1
+"47900","Washington-Arlington-Alexandria, DC-VA-MD-WV",2,10,1
+"47900","Washington-Arlington-Alexandria, DC-VA-MD-WV",NA,NA,1

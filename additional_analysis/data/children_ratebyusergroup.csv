@@ -1,0 +1,129 @@
+"","cbsa","cbsa_name","age_group","PER_TYP","count","child_pop","rate"
+"1","12060","Atlanta-Sandy Springs-Roswell, GA",1,1,42,7266155,0.578022351573838
+"2","12060","Atlanta-Sandy Springs-Roswell, GA",1,2,106,7266155,1.45881831587683
+"3","12060","Atlanta-Sandy Springs-Roswell, GA",1,5,33,7266155,0.45416041909373
+"4","12060","Atlanta-Sandy Springs-Roswell, GA",1,6,5,7266155,0.0688121847111712
+"5","12540","Bakersfield-Delano, CA",1,1,6,1300680,0.461297167635391
+"6","12540","Bakersfield-Delano, CA",1,2,32,1300680,2.46025156072208
+"7","12540","Bakersfield-Delano, CA",1,3,1,1300680,0.0768828612725651
+"8","12540","Bakersfield-Delano, CA",1,5,9,1300680,0.691945751453086
+"9","12540","Bakersfield-Delano, CA",1,6,2,1300680,0.15376572254513
+"10","16980","Chicago-Naperville-Elgin, IL-IN",1,1,35,10660816,0.328305075333821
+"11","16980","Chicago-Naperville-Elgin, IL-IN",1,2,113,10660816,1.05995638607776
+"12","16980","Chicago-Naperville-Elgin, IL-IN",1,3,2,10660816,0.0187602900190755
+"13","16980","Chicago-Naperville-Elgin, IL-IN",1,5,33,10660816,0.309544785314745
+"14","16980","Chicago-Naperville-Elgin, IL-IN",1,6,8,10660816,0.0750411600763018
+"15","18140","Columbus, OH",1,1,15,2481884,0.604379576160691
+"16","18140","Columbus, OH",1,2,32,2481884,1.28934309580947
+"17","18140","Columbus, OH",1,5,9,2481884,0.362627745696414
+"18","18140","Columbus, OH",1,6,1,2481884,0.0402919717440461
+"19","19100","Dallas-Fort Worth-Arlington, TX",1,1,64,9780316,0.654375584592563
+"20","19100","Dallas-Fort Worth-Arlington, TX",1,2,150,9780316,1.53369277638882
+"21","19100","Dallas-Fort Worth-Arlington, TX",1,3,1,9780316,0.0102246185092588
+"22","19100","Dallas-Fort Worth-Arlington, TX",1,5,35,9780316,0.357861647824058
+"23","19100","Dallas-Fort Worth-Arlington, TX",1,6,4,9780316,0.0408984740370352
+"24","19820","Detroit-Warren-Dearborn, MI",1,1,16,4746363,0.337100217577122
+"25","19820","Detroit-Warren-Dearborn, MI",1,2,48,4746363,1.01130065273137
+"26","19820","Detroit-Warren-Dearborn, MI",1,5,17,4746363,0.358168981175692
+"27","19820","Detroit-Warren-Dearborn, MI",1,6,6,4746363,0.126412581591421
+"28","23420","Fresno, CA",1,1,10,1411153,0.708640381305216
+"29","23420","Fresno, CA",1,2,37,1411153,2.6219694108293
+"30","23420","Fresno, CA",1,5,10,1411153,0.708640381305216
+"31","26420","Houston-Pasadena-The Woodlands, TX",1,1,37,9337378,0.396256850691918
+"32","26420","Houston-Pasadena-The Woodlands, TX",1,2,121,9337378,1.2958669982087
+"33","26420","Houston-Pasadena-The Woodlands, TX",1,3,1,9337378,0.0107096446132951
+"34","26420","Houston-Pasadena-The Woodlands, TX",1,5,23,9337378,0.246321826105787
+"35","26420","Houston-Pasadena-The Woodlands, TX",1,6,8,9337378,0.0856771569063607
+"36","26900","Indianapolis-Carmel-Greenwood, IN",1,1,19,2546740,0.746051815261864
+"37","26900","Indianapolis-Carmel-Greenwood, IN",1,2,24,2546740,0.942381240330776
+"38","26900","Indianapolis-Carmel-Greenwood, IN",1,5,7,2546740,0.274861195096476
+"39","27260","Jacksonville, FL",1,1,13,1763001,0.737379048565486
+"40","27260","Jacksonville, FL",1,2,33,1763001,1.87180835405085
+"41","27260","Jacksonville, FL",1,5,10,1763001,0.567214652742681
+"42","27260","Jacksonville, FL",1,6,2,1763001,0.113442930548536
+"43","29820","Las Vegas-Henderson-North Las Vegas, NV",1,1,2,2588160,0.0772749752720079
+"44","29820","Las Vegas-Henderson-North Las Vegas, NV",1,2,30,2588160,1.15912462908012
+"45","29820","Las Vegas-Henderson-North Las Vegas, NV",1,5,16,2588160,0.618199802176063
+"46","29820","Las Vegas-Henderson-North Las Vegas, NV",1,6,2,2588160,0.0772749752720079
+"47","31080","Los Angeles-Long Beach-Anaheim, CA",1,1,28,14041646,0.199406821678883
+"48","31080","Los Angeles-Long Beach-Anaheim, CA",1,2,102,14041646,0.726410564687359
+"49","31080","Los Angeles-Long Beach-Anaheim, CA",1,3,1,14041646,0.00712167220281725
+"50","31080","Los Angeles-Long Beach-Anaheim, CA",1,5,50,14041646,0.356083610140862
+"51","31080","Los Angeles-Long Beach-Anaheim, CA",1,6,9,14041646,0.0640950498253552
+"52","32580","McAllen-Edinburg-Mission, TX",1,1,8,1396820,0.57272948554574
+"53","32580","McAllen-Edinburg-Mission, TX",1,2,11,1396820,0.787503042625392
+"54","32580","McAllen-Edinburg-Mission, TX",1,5,8,1396820,0.57272948554574
+"55","32580","McAllen-Edinburg-Mission, TX",1,6,1,1396820,0.0715911856932174
+"56","33100","Miami-Fort Lauderdale-West Palm Beach, FL",1,1,30,6186990,0.484888451411753
+"57","33100","Miami-Fort Lauderdale-West Palm Beach, FL",1,2,78,6186990,1.26070997367056
+"58","33100","Miami-Fort Lauderdale-West Palm Beach, FL",1,3,2,6186990,0.0323258967607835
+"59","33100","Miami-Fort Lauderdale-West Palm Beach, FL",1,5,28,6186990,0.452562554650969
+"60","33100","Miami-Fort Lauderdale-West Palm Beach, FL",1,6,12,6186990,0.193955380564701
+"61","33340","Milwaukee-Waukesha, WI",1,1,4,1792897,0.223102609910106
+"62","33340","Milwaukee-Waukesha, WI",1,2,18,1792897,1.00396174459548
+"63","33340","Milwaukee-Waukesha, WI",1,5,3,1792897,0.16732695743258
+"64","33340","Milwaukee-Waukesha, WI",1,6,1,1792897,0.0557756524775266
+"65","33460","Minneapolis-St. Paul-Bloomington, MN-WI",1,1,9,4274645,0.210543799543588
+"66","33460","Minneapolis-St. Paul-Bloomington, MN-WI",1,2,27,4274645,0.631631398630764
+"67","33460","Minneapolis-St. Paul-Bloomington, MN-WI",1,5,11,4274645,0.257331310553274
+"68","33460","Minneapolis-St. Paul-Bloomington, MN-WI",1,6,5,4274645,0.116968777524215
+"69","35620","New York-Newark-Jersey City, NY-NJ",1,1,22,21089127,0.104319159346899
+"70","35620","New York-Newark-Jersey City, NY-NJ",1,2,75,21089127,0.355633497773521
+"71","35620","New York-Newark-Jersey City, NY-NJ",1,3,2,21089127,0.00948355994062722
+"72","35620","New York-Newark-Jersey City, NY-NJ",1,5,46,21089127,0.218121878634426
+"73","35620","New York-Newark-Jersey City, NY-NJ",1,6,25,21089127,0.11854449925784
+"74","36740","Orlando-Kissimmee-Sanford, FL",1,1,12,2842584,0.422151113212486
+"75","36740","Orlando-Kissimmee-Sanford, FL",1,2,49,2842584,1.72378371228432
+"76","36740","Orlando-Kissimmee-Sanford, FL",1,5,15,2842584,0.527688891515607
+"77","36740","Orlando-Kissimmee-Sanford, FL",1,6,12,2842584,0.422151113212486
+"78","37980","Philadelphia-Camden-Wilmington, PA-NJ-DE-MD",1,1,25,6619773,0.377656454382952
+"79","37980","Philadelphia-Camden-Wilmington, PA-NJ-DE-MD",1,2,54,6619773,0.815737941467177
+"80","37980","Philadelphia-Camden-Wilmington, PA-NJ-DE-MD",1,3,1,6619773,0.0151062581753181
+"81","37980","Philadelphia-Camden-Wilmington, PA-NJ-DE-MD",1,5,29,6619773,0.438081487084225
+"82","37980","Philadelphia-Camden-Wilmington, PA-NJ-DE-MD",1,6,8,6619773,0.120850065402545
+"83","38060","Phoenix-Mesa-Chandler, AZ",1,1,23,5709314,0.402850500077593
+"84","38060","Phoenix-Mesa-Chandler, AZ",1,2,110,5709314,1.92667630471892
+"85","38060","Phoenix-Mesa-Chandler, AZ",1,5,34,5709314,0.595518130549485
+"86","38060","Phoenix-Mesa-Chandler, AZ",1,6,10,5709314,0.175152391338084
+"87","40140","Riverside-San Bernardino-Ontario, CA",1,1,30,5886453,0.509644772497122
+"88","40140","Riverside-San Bernardino-Ontario, CA",1,2,104,5886453,1.76676854465669
+"89","40140","Riverside-San Bernardino-Ontario, CA",1,3,3,5886453,0.0509644772497122
+"90","40140","Riverside-San Bernardino-Ontario, CA",1,5,37,5886453,0.628561886079784
+"91","40140","Riverside-San Bernardino-Ontario, CA",1,6,7,5886453,0.118917113582662
+"92","41180","St. Louis, MO-IL",1,1,21,3081488,0.681488943004159
+"93","41180","St. Louis, MO-IL",1,2,77,3081488,2.49879279101525
+"94","41180","St. Louis, MO-IL",1,5,16,3081488,0.519229670860312
+"95","41180","St. Louis, MO-IL",1,6,2,3081488,0.064903708857539
+"96","41620","Salt Lake City-Murray, UT",1,1,3,1655200,0.181246979217013
+"97","41620","Salt Lake City-Murray, UT",1,2,17,1655200,1.02706621556307
+"98","41620","Salt Lake City-Murray, UT",1,3,1,1655200,0.0604156597390043
+"99","41620","Salt Lake City-Murray, UT",1,5,7,1655200,0.42290961817303
+"100","41620","Salt Lake City-Murray, UT",1,6,2,1655200,0.120831319478009
+"101","41700","San Antonio-New Braunfels, TX",1,1,16,3183934,0.502522979433619
+"102","41700","San Antonio-New Braunfels, TX",1,2,32,3183934,1.00504595886724
+"103","41700","San Antonio-New Braunfels, TX",1,5,13,3183934,0.408299920789815
+"104","41740","San Diego-Chula Vista-Carlsbad, CA",1,1,6,3543729,0.169313172649489
+"105","41740","San Diego-Chula Vista-Carlsbad, CA",1,2,18,3543729,0.507939517948466
+"106","41740","San Diego-Chula Vista-Carlsbad, CA",1,5,10,3543729,0.282188621082481
+"107","41740","San Diego-Chula Vista-Carlsbad, CA",1,6,1,3543729,0.0282188621082481
+"108","41860","San Francisco-Oakland-Fremont, CA",1,1,13,4561229,0.285010903859464
+"109","41860","San Francisco-Oakland-Fremont, CA",1,2,44,4561229,0.964652289985879
+"110","41860","San Francisco-Oakland-Fremont, CA",1,3,1,4561229,0.0219239156814972
+"111","41860","San Francisco-Oakland-Fremont, CA",1,5,9,4561229,0.197315241133475
+"112","41860","San Francisco-Oakland-Fremont, CA",1,6,3,4561229,0.0657717470444917
+"113","41940","San Jose-Sunnyvale-Santa Clara, CA",1,1,5,2127837,0.234980404984028
+"114","41940","San Jose-Sunnyvale-Santa Clara, CA",1,2,15,2127837,0.704941214952085
+"115","41940","San Jose-Sunnyvale-Santa Clara, CA",1,5,5,2127837,0.234980404984028
+"116","41940","San Jose-Sunnyvale-Santa Clara, CA",1,6,2,2127837,0.0939921619936114
+"117","42660","Seattle-Tacoma-Bellevue, WA",1,1,8,4205850,0.190211253373278
+"118","42660","Seattle-Tacoma-Bellevue, WA",1,2,27,4205850,0.641962980134812
+"119","42660","Seattle-Tacoma-Bellevue, WA",1,5,5,4205850,0.118882033358299
+"120","42660","Seattle-Tacoma-Bellevue, WA",1,6,1,4205850,0.0237764066716597
+"121","45300","Tampa-St. Petersburg-Clearwater, FL",1,1,17,3143544,0.540790903515268
+"122","45300","Tampa-St. Petersburg-Clearwater, FL",1,2,44,3143544,1.39969410321599
+"123","45300","Tampa-St. Petersburg-Clearwater, FL",1,5,19,3143544,0.604413362752358
+"124","45300","Tampa-St. Petersburg-Clearwater, FL",1,6,10,3143544,0.318112296185452
+"125","47900","Washington-Arlington-Alexandria, DC-VA-MD-WV",1,1,18,7177053,0.250799318327453
+"126","47900","Washington-Arlington-Alexandria, DC-VA-MD-WV",1,2,50,7177053,0.696664773131813
+"127","47900","Washington-Arlington-Alexandria, DC-VA-MD-WV",1,5,19,7177053,0.264732613790089
+"128","47900","Washington-Arlington-Alexandria, DC-VA-MD-WV",1,6,3,7177053,0.0417998863879088

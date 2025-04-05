@@ -1,0 +1,439 @@
+library(tidycensus)
+library(tidyverse)
+library(sf)
+library(dplyr)
+library(readxl)
+library(duckdb)
+
+# master sheet creation
+con <- dbConnect(duckdb::duckdb(), dbdir = "data/raw_data.duckdb")
+
+dbListTables(con)
+
+query <- "
+  SELECT 
+    YEAR,
+    STATE,
+    COUNTY,
+    CASE 
+      WHEN age < 5 THEN 1
+      WHEN age >= 5 AND age < 10 THEN 2
+      WHEN age >= 10 AND age < 15 THEN 3
+      WHEN age >= 15 AND age < 18 THEN 4
+      WHEN age >= 18 AND age < 20 THEN 5
+      WHEN age >= 20 AND age < 200 THEN 6
+      WHEN age >= 200 THEN 7
+      ELSE NULL
+    END AS AGE_CATEGORY,
+    COUNT(*) AS fatality_count
+  FROM (
+    SELECT '2010' AS YEAR, state AS STATE, county AS COUNTY, age, INJ_SEV FROM person2010
+    UNION ALL
+    SELECT '2011' AS YEAR, state AS STATE, county AS COUNTY, age, INJ_SEV FROM person2011
+    UNION ALL
+    SELECT '2012' AS YEAR, state AS STATE, county AS COUNTY, age, INJ_SEV FROM person2012
+    UNION ALL
+    SELECT '2013' AS YEAR, state AS STATE, county AS COUNTY, age, INJ_SEV FROM person2013
+    UNION ALL
+    SELECT '2014' AS YEAR, state AS STATE, county AS COUNTY, age, INJ_SEV FROM person2014
+    UNION ALL
+    SELECT '2015' AS YEAR, state AS STATE, county AS COUNTY, age, INJ_SEV FROM person2015
+    UNION ALL
+    SELECT '2016' AS YEAR, state AS STATE, county AS COUNTY, age, INJ_SEV FROM person2016
+    UNION ALL
+    SELECT '2017' AS YEAR, state AS STATE, county AS COUNTY, age, INJ_SEV FROM person2017
+    UNION ALL
+    SELECT '2018' AS YEAR, state AS STATE, county AS COUNTY, age, INJ_SEV FROM person2018
+    UNION ALL
+    SELECT '2019' AS YEAR, state AS STATE, county AS COUNTY, age, INJ_SEV FROM person2019
+    UNION ALL
+    SELECT '2020' AS YEAR, state AS STATE, county AS COUNTY, age, INJ_SEV FROM person2020
+    UNION ALL
+    SELECT '2021' AS YEAR, state AS STATE, county AS COUNTY, age, INJ_SEV FROM person2021
+    UNION ALL
+    SELECT '2022' AS YEAR, state AS STATE, county AS COUNTY, age, INJ_SEV FROM person2022
+  ) AS all_YEARs
+  WHERE INJ_SEV = 4
+  GROUP BY YEAR, STATE, COUNTY, AGE_CATEGORY
+  ORDER BY YEAR, STATE, COUNTY, AGE_CATEGORY
+"
+
+
+# Execute the query
+result <- dbGetQuery(con, query)
+
+#Note: we export the results as the csv of the mastersheetFARS.csv
+
+
+# Youth fatility number by county, in 2017-2019, 2021-2022)
+master<-read.csv("data/mastersheetFARS.csv")%>%
+  filter(YEAR>2016 & YEAR!=2020)
+master<-master%>%
+  mutate(county_code= sprintf("%02d%03d", master$STATE, master$COUNTY))
+
+children_f<-master%>%
+  filter(AGE_CATEGORY<5)
+
+master<-master%>%
+  group_by(county_code)%>%
+  summarise(fatality_count=sum(fatality_count))
+
+children_f<-children_f%>%
+  group_by(county_code)%>%
+  summarise(fatality_count=sum(fatality_count))
+
+
+# aggregate fatality number by MSA 
+msa<- read_excel("data/cbsa_list.xlsx")%>%
+  filter(`Metropolitan/Micropolitan Statistical Area`=="Metropolitan Statistical Area")
+
+msa$`FIPS State Code`<- as.numeric(msa$`FIPS State Code`)
+msa$`FIPS County Code`<- as.numeric(msa$`FIPS County Code`)
+msa$GEOID<- sprintf("%02d%03d", msa$`FIPS State Code`, msa$`FIPS County Code`)
+
+msa<- msa%>%
+  rename("name"=`CBSA Title`, "cbsa_code"=`CBSA Code`)%>%
+  select(name, cbsa_code, GEOID)
+
+msa_fatality<- master%>%
+  left_join(msa, by=c("county_code"="GEOID"))%>%
+  filter(!is.na(cbsa_code))
+
+msa_fatality<-msa_fatality%>%
+  group_by(cbsa_code, name)%>%
+  summarise(fatality_count=sum(fatality_count))%>%
+  rename("fatality_overall"="fatality_count")
+
+msa_fatality_children<- children_f%>%
+  left_join(msa, by=c("county_code"="GEOID"))%>%
+  filter(!is.na(cbsa_code))
+
+msa_fatality_children<-msa_fatality_children%>%
+  group_by(cbsa_code, name)%>%
+  summarise(fatality_count=sum(fatality_count))%>%
+  rename("fatality_children"="fatality_count")
+
+master_fatality<-left_join(msa_fatality, msa_fatality_children, by=c("cbsa_code"="cbsa_code"))%>%
+  mutate(fatality_children=ifelse(is.na(fatality_children), 0, fatality_children))%>%
+  select(cbsa_code, name.x, fatality_overall, fatality_children)%>%
+  rename("name"="name.x")
+
+# Population
+
+tot_pop2019<-get_acs(
+  geography= "Metropolitan Statistical Area/Micropolitan Statistical Area",
+  variables= c(tot_pop= "B01001_001"),
+  year= 2019,
+  survey= "acs1"
+)
+
+
+tot2018<-get_acs(
+  geography= "Metropolitan Statistical Area/Micropolitan Statistical Area",
+  variables= c(tot_pop= "B01001_001"),
+  year= 2018,
+  survey= "acs1"
+)
+
+tot2017<-get_acs(
+  geography= "Metropolitan Statistical Area/Micropolitan Statistical Area",
+  variables= c(tot_pop= "B01001_001"),
+  year= 2017,
+  survey= "acs1"
+)
+
+tot2021<-get_acs(
+  geography= "Metropolitan Statistical Area/Micropolitan Statistical Area",
+  variables= c(tot_pop= "B01001_001"),
+  year= 2021,
+  survey= "acs1"
+)
+
+tot2022<-get_acs(
+  geography= "Metropolitan Statistical Area/Micropolitan Statistical Area",
+  variables= c(tot_pop= "B01001_001"),
+  year= 2022,
+  survey= "acs1"
+)
+pop<- rbind(tot_pop2019, tot2018, tot2017, tot2021, tot2022)
+
+# join
+pop<-pop%>%
+  group_by(GEOID)%>%
+  summarise(tot_pop=sum(estimate))
+
+master_fatality<-left_join(master_fatality, pop, by=c("cbsa_code"="GEOID"))%>%
+  mutate(rate_overall=fatality_overall/tot_pop*100000)%>%
+  filter(!is.na(rate_overall))
+
+
+#children pop under 18
+
+children_2021<- get_acs(
+  geography= "Metropolitan Statistical Area/Micropolitan Statistical Area",
+  variables= "B09001_001E",
+  year= 2021,
+  survey= "acs1"
+)
+
+children_2022<- get_acs(
+  geography= "Metropolitan Statistical Area/Micropolitan Statistical Area",
+  variables= "B09001_001E",
+  year= 2022,
+  survey= "acs1"
+)
+
+
+children_2019<- get_acs(
+  geography= "Metropolitan Statistical Area/Micropolitan Statistical Area",
+  variables= "B09001_001E",
+  year= 2019,
+  survey= "acs1"
+)
+
+children_2018<- get_acs(
+  geography= "Metropolitan Statistical Area/Micropolitan Statistical Area",
+  variables= "B09001_001E",
+  year= 2018,
+  survey= "acs1"
+)
+
+children_2017<- get_acs(
+  geography= "Metropolitan Statistical Area/Micropolitan Statistical Area",
+  variables= "B09001_001E",
+  year= 2017,
+  survey= "acs1"
+)
+
+children_pop<- rbind(children_2022, children_2021, children_2019, children_2018, children_2017)
+
+# join
+children_pop<-children_pop%>%
+  group_by(GEOID)%>%
+  summarise(child_pop=sum(estimate))%>%
+  filter(GEOID %in% master_fatality$cbsa_code)
+
+master_fatality<-left_join(master_fatality, children_pop, by=c("cbsa_code"="GEOID"))%>%
+  mutate(rate_children=fatality_children/child_pop*100000)
+
+
+master_fatality_30<-master_fatality%>%
+  arrange(desc(child_pop))%>%
+  head(30)
+
+# export the sheet with top 30 and overall
+#write.csv(master_fatality_30, "data/master_fatality_30.csv")
+#write.csv(master_fatality, "data/master_fatality.csv")
+
+
+# plot
+ggplot(master_fatality, aes(x=rate_children, y=rate_overall))+
+  geom_point()+
+  geom_smooth(method = "lm", se=FALSE)+
+  labs(
+    title="CBSA fatality rate",
+    subtitle = "Top 30 most populated, 2017 - 2022",
+    x="Children Fatality Rate (per 100,000)",
+    y="Total Fatality Rate (per 100,000)"
+  )+
+  theme_minimal(base_size=12)+
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold"),
+    plot.subtitle = element_text(hjust = 0.5),
+    axis.text.y = element_text(size = 8),
+    axis.title.x = element_text(size = 12),
+    axis.title.y = element_text(size = 12),
+    legend.title = element_text(size = 10),
+    legend.text = element_text(size = 8),   # Smaller legend text
+    legend.key.size = unit(0.6, "lines") 
+  )
+
+
+library(ggrepel)
+ggplot(master_fatality_30, aes(x=rate_children, y=rate_overall,label=name))+
+  geom_point()+
+  geom_smooth(method = "lm", se=FALSE)+
+  geom_text_repel(size = 3, box.padding = 0.5, point.padding = 0.3)+
+  labs(
+    title="CBSA fatality rate",
+    subtitle = "Top 30 most populated, 2017 - 2022",
+    x="Children Fatality Rate (per 100,000)",
+    y="Total Fatality Rate (per 100,000)"
+  )+
+  theme_minimal(base_size=12)+
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold"),
+    plot.subtitle = element_text(hjust = 0.5),
+    axis.text.y = element_text(size = 8),
+    axis.title.x = element_text(size = 12),
+    axis.title.y = element_text(size = 12),
+    legend.title = element_text(size = 10),  # Smaller legend title
+    legend.text = element_text(size = 8),   # Smaller legend text
+    legend.key.size = unit(0.6, "lines") 
+  )
+
+
+# county
+master_county<-read.csv("data/mastersheetFARS.csv")%>%
+  filter(YEAR>2016 & YEAR!=2020)
+fatality_county<-master_county%>%
+  mutate(GEOID= sprintf("%02d%03d", master_county$STATE, master_county$COUNTY))%>%
+  mutate(FIPS.State.Code=substr(GEOID,1,nchar(GEOID)-3),
+         FIPS.County.Code=substr(GEOID, 3, nchar(GEOID))) %>% 
+  select(-X)  #
+
+county_list <- read.csv("./data/metro_fips_codes.csv") %>% 
+  mutate(GEOID=str_pad(FIPS.Code, 5, pad = "0")) %>% 
+  mutate(FIPS.State.Code=substr(GEOID,1,nchar(GEOID)-3),
+         FIPS.County.Code=substr(GEOID, 3, nchar(GEOID)))
+county_fatality <- fatality_county %>%
+  filter(GEOID %in% msa$GEOID)
+
+
+years <- c(2017, 2018, 2019, 2021, 2022)
+
+# Function to get ACS data for each year (MAKE SURE TO REPLACE WITH STORED CENSUS FILES)
+get_county_pop <- function(year) {
+  get_acs(
+    geography = "county",
+    variables = "B01003_001", # Total population
+    year = year,
+    survey = "acs1",
+    output = "wide"
+  ) %>%
+    mutate(year = year)
+}
+
+# Fetch data for all years and combine
+pop <- bind_rows(lapply(years, get_county_pop))
+
+# Rename and select relevant columns
+pop <- pop %>%
+  rename(pop = "B01003_001E") %>%
+  select(NAME, GEOID, pop, year)
+
+pop <- pop %>% mutate(GEOID=str_pad(GEOID, 5, pad = "0")) %>% 
+  mutate(FIPS.State.Code=substr(GEOID,1,nchar(GEOID)-3),
+         FIPS.County.Code=substr(GEOID, 3, nchar(GEOID)))
+
+youth_tot_county<- county_fatality %>% left_join(pop, by=c("GEOID", "YEAR"="year"))%>% filter(AGE_CATEGORY<6) %>% 
+  group_by(GEOID,YEAR, NAME) %>% summarise(fatsum=sum(fatality_count), pop=pop) %>%
+  group_by(GEOID, NAME) %>%
+  summarise(rate=mean(fatsum/pop *100000)) %>% mutate(Variable='Youth') %>% rbind(
+    county_fatality %>% left_join(pop, by=c("GEOID", "YEAR"="year"))%>% 
+      group_by(GEOID,YEAR, NAME) %>% summarise(fatsum=sum(fatality_count), pop=pop) %>%
+      group_by(GEOID, NAME) %>%
+      summarise(rate=mean(fatsum/pop *100000)) %>% mutate(Variable='Total')
+  ) %>% mutate(Main= ifelse(GEOID %in% county_list$GEOID,"Main","Adjacent")) %>% drop_na()
+
+youth_tot_county_wide <- county_fatality %>% left_join(pop, by=c("GEOID", "YEAR"="year"))%>% filter(AGE_CATEGORY<6) %>% 
+  group_by(GEOID,YEAR, NAME) %>% summarise(fatsum=sum(fatality_count), pop=pop) %>%
+  group_by(GEOID, NAME) %>%
+  summarise(rate_youth=mean(fatsum/pop *100000))%>% left_join(
+    county_fatality %>% left_join(pop, by=c("GEOID", "YEAR"="year"))%>% 
+      group_by(GEOID,YEAR, NAME) %>% summarise(fatsum=sum(fatality_count), pop=pop) %>%
+      group_by(GEOID, NAME) %>%
+      summarise(rate_total=mean(fatsum/pop *100000)),
+    by=c("GEOID", "NAME"))%>% 
+  mutate(Main= ifelse(GEOID %in% county_list$GEOID,"Main","Adjacent")) %>% drop_na()
+
+youth_tot_county_wide$NAME<- gsub("(?i)county", "", youth_tot_county_wide$NAME , perl = TRUE)
+youth_tot_county$NAME<- gsub("(?i)county", "", youth_tot_county$NAME , perl = TRUE)
+
+
+# plot
+library(ggplot2)
+ggplot(youth_tot_county_wide %>% filter(Main=="Main"), aes(x=rate_youth, y=rate_total,label=NAME))+
+  geom_point()+
+  geom_smooth(method = "lm", se=FALSE, color='#a33428')+
+  labs(
+    title="Fatality rate within Central Counties",
+    subtitle = "Top 30 most populated CBSAs, 2017 - 2022",
+    x="Child Fatality Rate (per 100,000)",
+    y="Total Fatality Rate (per 100,000)"
+  )+
+  theme_minimal(base_size=12)+
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold"),
+    plot.subtitle = element_text(hjust = 0.5),
+    axis.text.y = element_text(size = 8),
+    axis.title.x = element_text(size = 12),
+    axis.title.y = element_text(size = 12),
+    legend.title = element_text(size = 10),  # Smaller legend title
+    legend.text = element_text(size = 8),   # Smaller legend text
+    legend.key.size = unit(0.6, "lines") 
+  )+
+  geom_text(size = 2, vjust=1, hjust= -0.1)
+
+ggplot(youth_tot_county %>% filter(Main=="Main") %>% tidyr::drop_na(),aes(x=rate,y=reorder(NAME,rate),
+                                                                          group = Variable))+
+  
+  geom_col(aes(fill = Variable), position = position_dodge(width =1)) +
+  scale_fill_manual(name = "Aggregation", 
+                    values = c("Total" = "grey20", "Youth" = '#a33428')) +  # adjust groups & colors as needed
+  labs(
+    title="Fatality rate within Central Counties",
+    subtitle = "Top 30 most populated CBSAs, 2017 - 2022",
+    x="Fatality Rate (per 100,000)",
+    y="County"
+  )+
+  theme_minimal(base_size=12)+
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold"),
+    plot.subtitle = element_text(hjust = 0.5),
+    axis.text.y = element_text(size = 8),
+    axis.title.x = element_text(size = 12),
+    axis.title.y = element_text(size = 12),
+    legend.title = element_text(size = 10),  # Smaller legend title
+    legend.text = element_text(size = 8),   # Smaller legend text
+    legend.key.size = unit(0.6, "lines") 
+  )
+
+youth_msa_county_wide <- youth_tot_county_wide%>% left_join(msa) %>% rename(CBSA=name, County=NAME) %>% filter(CBSA%in%master_fatality_30$name) %>% drop_na()
+youth_msa_county_wide$Main <- as.factor(youth_msa_county_wide$Main)
+youth_msa_county_wide$County <- as.factor(youth_msa_county_wide$County)
+ggplot(youth_msa_county_wide , aes(x=rate_youth, y=rate_total, label=County, color= Main,group = CBSA))+
+  geom_point()+
+  geom_smooth(method = "lm", se=FALSE, color='black',aes(group = CBSA))+
+  labs(
+    title="Fatality rate within Central Counties",
+    subtitle = "Top 30 most populated CBSAs, 2017 - 2022",
+    x="Child Fatality Rate (per 100,000)",
+    y="Total Fatality Rate (per 100,000)"
+  )+
+  theme_minimal(base_size=12)+
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold"),
+    plot.subtitle = element_text(hjust = 0.5),
+    axis.text.y = element_text(size = 8),
+    axis.title.x = element_text(size = 12),
+    axis.title.y = element_text(size = 12),
+    legend.title = element_text(size = 10),  # Smaller legend title
+    legend.text = element_text(size = 8),   # Smaller legend text
+    legend.key.size = unit(0.6, "lines") 
+  )+
+  geom_text(size = 2, vjust=1, hjust= -0.1)+
+  facet_wrap(~CBSA,  scales = "free")
+
+ggplot(youth_msa_county_wide , aes(x=rate_youth, y=rate_total, label=County, color= Main))+
+  geom_point(size=1)+
+  geom_smooth(method = "lm", se=FALSE, lwd=0.8)+
+  labs(
+    title="Fatality rate within Central Counties",
+    subtitle = "Top 30 most populated CBSAs, 2017 - 2022",
+    x="Child Fatality Rate (per 100,000)",
+    y="Total Fatality Rate (per 100,000)"
+  )+
+  scale_color_manual(name = "Aggregation", 
+                     values = c("Adjacent" = "grey40", "Main" = '#a33428')) +  # adjust
+  theme_minimal(base_size=12)+
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold"),
+    plot.subtitle = element_text(hjust = 0.5),
+    axis.text.y = element_text(size = 8),
+    axis.title.x = element_text(size = 12),
+    axis.title.y = element_text(size = 12),
+    legend.title = element_text(size = 10),  # Smaller legend title
+    legend.text = element_text(size = 8),   # Smaller legend text
+    legend.key.size = unit(0.6, "lines") 
+  )

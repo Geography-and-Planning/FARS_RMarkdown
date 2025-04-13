@@ -83,7 +83,7 @@ complete<- complete%>%
 
 library(readxl)
 
-cbsa<- read_excel("data/cbsa_list.xlsx") 
+cbsa<- read_excel("data/cbsa_list.xlsx")
 
 cbsa<- cbsa%>%
   rename(state= `FIPS State Code`,
@@ -260,7 +260,7 @@ ggplot(children_adults, aes(x=walk_children, y=rate,label=cbsa_name.x))+
     axis.title.y = element_text(size = 12),
     legend.title = element_text(size = 10),  # Smaller legend title
     legend.text = element_text(size = 8),   # Smaller legend text
-    legend.key.size = unit(0.6, "lines") 
+    legend.key.size = unit(0.6, "lines")
   )
 
 model1<-lm(rate~walk_children, data=children_adults)
@@ -305,7 +305,7 @@ ggplot(walk2, aes(x=children, y=adults, label=cbsa_name.x))+
     axis.title.y = element_text(size = 12),
     legend.title = element_text(size = 10),  # Smaller legend title
     legend.text = element_text(size = 8),   # Smaller legend text
-    legend.key.size = unit(0.6, "lines") 
+    legend.key.size = unit(0.6, "lines")
   )
 longer<- longer%>%
   filter(PER_TYP!=3)
@@ -337,7 +337,7 @@ ggplot(longer, aes(x=children, y=adults, label=cbsa_name.x))+
     axis.title.y = element_text(size = 12),
     legend.title = element_text(size = 10),  # Smaller legend title
     legend.text = element_text(size = 8),   # Smaller legend text
-    legend.key.size = unit(0.6, "lines") 
+    legend.key.size = unit(0.6, "lines")
   )
 
 longer2<- left_join(children, adults, by=c("cbsa"="cbsa", "PER_TYP"="PER_TYP"))%>%
@@ -374,5 +374,5 @@ ggplot(longer2, aes(x=children, y=adults, label=cbsa_name.x))+
     axis.title.y = element_text(size = 12),
     legend.title = element_text(size = 10),  # Smaller legend title
     legend.text = element_text(size = 8),   # Smaller legend text
-    legend.key.size = unit(0.6, "lines") 
+    legend.key.size = unit(0.6, "lines")
   )

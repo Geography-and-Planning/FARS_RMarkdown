@@ -11,11 +11,11 @@ con <- dbConnect(duckdb::duckdb(), dbdir = "data/raw_data.duckdb")
 dbListTables(con)
 
 query <- "
-  SELECT 
+  SELECT
     YEAR,
     STATE,
     COUNTY,
-    CASE 
+    CASE
       WHEN age < 5 THEN 1
       WHEN age >= 5 AND age < 10 THEN 2
       WHEN age >= 10 AND age < 15 THEN 3
@@ -83,7 +83,7 @@ children_f<-children_f%>%
   summarise(fatality_count=sum(fatality_count))
 
 
-# aggregate fatality number by MSA 
+# aggregate fatality number by MSA
 msa<- read_excel("data/cbsa_list.xlsx")%>%
   filter(`Metropolitan/Micropolitan Statistical Area`=="Metropolitan Statistical Area")
 
@@ -245,7 +245,7 @@ ggplot(master_fatality, aes(x=rate_children, y=rate_overall))+
     axis.title.y = element_text(size = 12),
     legend.title = element_text(size = 10),
     legend.text = element_text(size = 8),   # Smaller legend text
-    legend.key.size = unit(0.6, "lines") 
+    legend.key.size = unit(0.6, "lines")
   )
 
 
@@ -269,7 +269,7 @@ ggplot(master_fatality_30, aes(x=rate_children, y=rate_overall,label=name))+
     axis.title.y = element_text(size = 12),
     legend.title = element_text(size = 10),  # Smaller legend title
     legend.text = element_text(size = 8),   # Smaller legend text
-    legend.key.size = unit(0.6, "lines") 
+    legend.key.size = unit(0.6, "lines")
   )
 
 
@@ -279,11 +279,11 @@ master_county<-read.csv("data/mastersheetFARS.csv")%>%
 fatality_county<-master_county%>%
   mutate(GEOID= sprintf("%02d%03d", master_county$STATE, master_county$COUNTY))%>%
   mutate(FIPS.State.Code=substr(GEOID,1,nchar(GEOID)-3),
-         FIPS.County.Code=substr(GEOID, 3, nchar(GEOID))) %>% 
+         FIPS.County.Code=substr(GEOID, 3, nchar(GEOID))) %>%
   select(-X)  #
 
-county_list <- read.csv("./data/metro_fips_codes.csv") %>% 
-  mutate(GEOID=str_pad(FIPS.Code, 5, pad = "0")) %>% 
+county_list <- read.csv("./data/metro_fips_codes.csv") %>%
+  mutate(GEOID=str_pad(FIPS.Code, 5, pad = "0")) %>%
   mutate(FIPS.State.Code=substr(GEOID,1,nchar(GEOID)-3),
          FIPS.County.Code=substr(GEOID, 3, nchar(GEOID)))
 county_fatality <- fatality_county %>%
@@ -312,29 +312,29 @@ pop <- pop %>%
   rename(pop = "B01003_001E") %>%
   select(NAME, GEOID, pop, year)
 
-pop <- pop %>% mutate(GEOID=str_pad(GEOID, 5, pad = "0")) %>% 
+pop <- pop %>% mutate(GEOID=str_pad(GEOID, 5, pad = "0")) %>%
   mutate(FIPS.State.Code=substr(GEOID,1,nchar(GEOID)-3),
          FIPS.County.Code=substr(GEOID, 3, nchar(GEOID)))
 
-youth_tot_county<- county_fatality %>% left_join(pop, by=c("GEOID", "YEAR"="year"))%>% filter(AGE_CATEGORY<6) %>% 
+youth_tot_county<- county_fatality %>% left_join(pop, by=c("GEOID", "YEAR"="year"))%>% filter(AGE_CATEGORY<6) %>%
   group_by(GEOID,YEAR, NAME) %>% summarise(fatsum=sum(fatality_count), pop=pop) %>%
   group_by(GEOID, NAME) %>%
   summarise(rate=mean(fatsum/pop *100000)) %>% mutate(Variable='Youth') %>% rbind(
-    county_fatality %>% left_join(pop, by=c("GEOID", "YEAR"="year"))%>% 
+    county_fatality %>% left_join(pop, by=c("GEOID", "YEAR"="year"))%>%
       group_by(GEOID,YEAR, NAME) %>% summarise(fatsum=sum(fatality_count), pop=pop) %>%
       group_by(GEOID, NAME) %>%
       summarise(rate=mean(fatsum/pop *100000)) %>% mutate(Variable='Total')
   ) %>% mutate(Main= ifelse(GEOID %in% county_list$GEOID,"Main","Adjacent")) %>% drop_na()
 
-youth_tot_county_wide <- county_fatality %>% left_join(pop, by=c("GEOID", "YEAR"="year"))%>% filter(AGE_CATEGORY<6) %>% 
+youth_tot_county_wide <- county_fatality %>% left_join(pop, by=c("GEOID", "YEAR"="year"))%>% filter(AGE_CATEGORY<6) %>%
   group_by(GEOID,YEAR, NAME) %>% summarise(fatsum=sum(fatality_count), pop=pop) %>%
   group_by(GEOID, NAME) %>%
   summarise(rate_youth=mean(fatsum/pop *100000))%>% left_join(
-    county_fatality %>% left_join(pop, by=c("GEOID", "YEAR"="year"))%>% 
+    county_fatality %>% left_join(pop, by=c("GEOID", "YEAR"="year"))%>%
       group_by(GEOID,YEAR, NAME) %>% summarise(fatsum=sum(fatality_count), pop=pop) %>%
       group_by(GEOID, NAME) %>%
       summarise(rate_total=mean(fatsum/pop *100000)),
-    by=c("GEOID", "NAME"))%>% 
+    by=c("GEOID", "NAME"))%>%
   mutate(Main= ifelse(GEOID %in% county_list$GEOID,"Main","Adjacent")) %>% drop_na()
 
 youth_tot_county_wide$NAME<- gsub("(?i)county", "", youth_tot_county_wide$NAME , perl = TRUE)
@@ -361,15 +361,15 @@ ggplot(youth_tot_county_wide %>% filter(Main=="Main"), aes(x=rate_youth, y=rate_
     axis.title.y = element_text(size = 12),
     legend.title = element_text(size = 10),  # Smaller legend title
     legend.text = element_text(size = 8),   # Smaller legend text
-    legend.key.size = unit(0.6, "lines") 
+    legend.key.size = unit(0.6, "lines")
   )+
   geom_text(size = 2, vjust=1, hjust= -0.1)
 
 ggplot(youth_tot_county %>% filter(Main=="Main") %>% tidyr::drop_na(),aes(x=rate,y=reorder(NAME,rate),
                                                                           group = Variable))+
-  
+
   geom_col(aes(fill = Variable), position = position_dodge(width =1)) +
-  scale_fill_manual(name = "Aggregation", 
+  scale_fill_manual(name = "Aggregation",
                     values = c("Total" = "grey20", "Youth" = '#a33428')) +  # adjust groups & colors as needed
   labs(
     title="Fatality rate within Central Counties",
@@ -386,7 +386,7 @@ ggplot(youth_tot_county %>% filter(Main=="Main") %>% tidyr::drop_na(),aes(x=rate
     axis.title.y = element_text(size = 12),
     legend.title = element_text(size = 10),  # Smaller legend title
     legend.text = element_text(size = 8),   # Smaller legend text
-    legend.key.size = unit(0.6, "lines") 
+    legend.key.size = unit(0.6, "lines")
   )
 
 youth_msa_county_wide <- youth_tot_county_wide%>% left_join(msa) %>% rename(CBSA=name, County=NAME) %>% filter(CBSA%in%master_fatality_30$name) %>% drop_na()
@@ -410,7 +410,7 @@ ggplot(youth_msa_county_wide , aes(x=rate_youth, y=rate_total, label=County, col
     axis.title.y = element_text(size = 12),
     legend.title = element_text(size = 10),  # Smaller legend title
     legend.text = element_text(size = 8),   # Smaller legend text
-    legend.key.size = unit(0.6, "lines") 
+    legend.key.size = unit(0.6, "lines")
   )+
   geom_text(size = 2, vjust=1, hjust= -0.1)+
   facet_wrap(~CBSA,  scales = "free")
@@ -424,7 +424,7 @@ ggplot(youth_msa_county_wide , aes(x=rate_youth, y=rate_total, label=County, col
     x="Child Fatality Rate (per 100,000)",
     y="Total Fatality Rate (per 100,000)"
   )+
-  scale_color_manual(name = "Aggregation", 
+  scale_color_manual(name = "Aggregation",
                      values = c("Adjacent" = "grey40", "Main" = '#a33428')) +  # adjust
   theme_minimal(base_size=12)+
   theme(
@@ -435,5 +435,5 @@ ggplot(youth_msa_county_wide , aes(x=rate_youth, y=rate_total, label=County, col
     axis.title.y = element_text(size = 12),
     legend.title = element_text(size = 10),  # Smaller legend title
     legend.text = element_text(size = 8),   # Smaller legend text
-    legend.key.size = unit(0.6, "lines") 
+    legend.key.size = unit(0.6, "lines")
   )

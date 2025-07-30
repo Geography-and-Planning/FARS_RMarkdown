@@ -13,16 +13,16 @@ sd_rate <- sd(msa$rate_overall, na.rm = TRUE)
 ggplot(msa, aes(x = rate_overall)) +
   geom_histogram(aes(y = ..density..), binwidth = 0.5, fill = "lightgray", color = "black") +
   geom_density(color = "blue", size = 1) +
-  stat_function(fun = dnorm, 
-                args = list(mean = mean_rate, sd = sd_rate), 
+  stat_function(fun = dnorm,
+                args = list(mean = mean_rate, sd = sd_rate),
                 color = "red", linetype = "dashed") +
   geom_vline(xintercept = mean_rate, color = "darkgreen", linetype = "solid", size = 1) +
   geom_vline(xintercept = mean_rate + sd_rate, color = "orange", linetype = "dashed", size = 0.8) +
   geom_vline(xintercept = mean_rate - sd_rate, color = "orange", linetype = "dashed", size = 0.8) +
   labs(
     title = "Distribution of Fatality Rates with Normal Curve and ±1 SD",
-    subtitle = paste0("Mean = ", round(mean_rate, 2), 
-                      ", SD = ", round(sd_rate, 2), 
+    subtitle = paste0("Mean = ", round(mean_rate, 2),
+                      ", SD = ", round(sd_rate, 2),
                       " | Dashed lines represent ±1 SD"),
     x = "Fatality Rate",
     y = "Density"
@@ -37,16 +37,16 @@ sd_rate <- sd(county_main$rate_total, na.rm = TRUE)
 ggplot(county_main, aes(x = rate_total)) +
   geom_histogram(aes(y = ..density..), binwidth = 0.5, fill = "lightgray", color = "black") +
   geom_density(color = "blue", size = 1) +
-  stat_function(fun = dnorm, 
-                args = list(mean = mean_rate, sd = sd_rate), 
+  stat_function(fun = dnorm,
+                args = list(mean = mean_rate, sd = sd_rate),
                 color = "red", linetype = "dashed") +
   geom_vline(xintercept = mean_rate, color = "darkgreen", linetype = "solid", size = 1) +
   geom_vline(xintercept = mean_rate + sd_rate, color = "orange", linetype = "dashed", size = 0.8) +
   geom_vline(xintercept = mean_rate - sd_rate, color = "orange", linetype = "dashed", size = 0.8) +
   labs(
     title = "Distribution of Fatality Rates with Normal Curve and ±1 SD",
-    subtitle = paste0("Mean = ", round(mean_rate, 2), 
-                      ", SD = ", round(sd_rate, 2), 
+    subtitle = paste0("Mean = ", round(mean_rate, 2),
+                      ", SD = ", round(sd_rate, 2),
                       " | Dashed lines represent ±1 SD"),
     x = "Fatality Rate",
     y = "Density"

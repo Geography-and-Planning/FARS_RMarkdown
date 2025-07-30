@@ -14,7 +14,7 @@ sd_rate <- sd(msa$rate_overall, na.rm = TRUE)
 
 # Plot
 ggplot(msa, aes(x = rate_overall)) +
-  geom_histogram(aes(y = ..density..), binwidth = 0.5, fill = "lightgray", color = "black") +
+  geom_histogram(aes(y = after_stat(density)), binwidth = 0.5, fill = "lightgray", color = "black") +
   geom_density(color = "blue", size = 1) +
   stat_function(fun = dnorm,
                 args = list(mean = mean_rate, sd = sd_rate),

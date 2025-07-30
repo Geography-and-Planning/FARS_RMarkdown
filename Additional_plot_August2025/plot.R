@@ -18,13 +18,13 @@ sd_rate <- sd(msa$rate_overall, na.rm = TRUE)
 # Plot
 ggplot(msa, aes(x = rate_overall)) +
   geom_histogram(aes(y = after_stat(density)), binwidth = 0.5, fill = "lightgray", color = "black") +
-  geom_density(color = "blue", size = 1) +
+  geom_density(color = "blue", linewidth = 1) +
   stat_function(fun = dnorm,
                 args = list(mean = mean_rate, sd = sd_rate),
                 color = "red", linetype = "dashed") +
-  geom_vline(xintercept = mean_rate, color = "darkgreen", linetype = "solid", size = 1) +
-  geom_vline(xintercept = mean_rate + sd_rate, color = "orange", linetype = "dashed", size = 0.8) +
-  geom_vline(xintercept = mean_rate - sd_rate, color = "orange", linetype = "dashed", size = 0.8) +
+  geom_vline(xintercept = mean_rate, color = "darkgreen", linetype = "solid", linewidth = 1) +
+  geom_vline(xintercept = mean_rate + sd_rate, color = "orange", linetype = "dashed", linewidth = 0.8) +
+  geom_vline(xintercept = mean_rate - sd_rate, color = "orange", linetype = "dashed", linewidth = 0.8) +
   labs(
     title = "Distribution of Fatality Rates with Normal Curve and ±1 SD",
     subtitle = paste0("Mean = ", round(mean_rate, 2),

@@ -4,6 +4,9 @@ if (!file.exists("master_fatality_cbsa30.csv")) {
 }
 msa <- read.csv("master_fatality_cbsa30.csv")
 
+if (!file.exists("youth_msa_county_wide_modified.csv")) {
+  stop("Error: The file 'youth_msa_county_wide_modified.csv' does not exist in the working directory. Please ensure the file is available.")
+}
 county<- read.csv("youth_msa_county_wide_modified.csv")
 
 county_main <- county %>%

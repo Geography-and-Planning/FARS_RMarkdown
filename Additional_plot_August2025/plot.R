@@ -1,5 +1,8 @@
 setwd("/Users/zhanchaoyang/Desktop")
-msa<- read.csv("master_fatality_cbsa30.csv")
+if (!file.exists("master_fatality_cbsa30.csv")) {
+  stop("Error: The file 'master_fatality_cbsa30.csv' does not exist in the working directory. Please ensure the file is available.")
+}
+msa <- read.csv("master_fatality_cbsa30.csv")
 
 county<- read.csv("youth_msa_county_wide_modified.csv")
 

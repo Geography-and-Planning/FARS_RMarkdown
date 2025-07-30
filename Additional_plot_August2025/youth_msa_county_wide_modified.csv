@@ -1,0 +1,204 @@
+GEOID,County,rate_youth,rate_total,Main,CBSA,cbsa_code
+4013,"Maricopa , Arizona",1.16528449425016,12.044385804964,Main,"Phoenix-Mesa-Chandler, AZ",38060
+4021,"Pinal , Arizona",2.46849059078423,16.2545546076347,Adjacent,"Phoenix-Mesa-Chandler, AZ",38060
+6001,"Alameda , California",0.541880682276529,5.77008426250445,Adjacent,"San Francisco-Oakland-Fremont, CA",41860
+6013,"Contra Costa , California",0.78831434403467,6.61785420117147,Adjacent,"San Francisco-Oakland-Fremont, CA",41860
+6017,"El Dorado , California",1.84574427251803,14.8915264756695,Adjacent,"Sacramento-Roseville-Folsom, CA",40900
+6037,"Los Angeles , California",0.562081095955122,7.85169075249293,Main,"Los Angeles-Long Beach-Anaheim, CA",31080
+6041,"Marin , California",0.851874658748768,5.72144660526814,Adjacent,"San Francisco-Oakland-Fremont, CA",41860
+6059,"Orange , California",0.542821775621801,6.68360292851351,Adjacent,"Los Angeles-Long Beach-Anaheim, CA",31080
+6061,"Placer , California",0.986520437953587,7.81713171370618,Adjacent,"Sacramento-Roseville-Folsom, CA",40900
+6065,"Riverside , California",1.32689595942414,12.8772357542478,Main,"Riverside-San Bernardino-Ontario, CA",40140
+6067,"Sacramento , California",0.794545147004509,11.8732254030784,Main,"Sacramento-Roseville-Folsom, CA",40900
+6071,"San Bernardino , California",1.42142971353922,17.137654007333,Adjacent,"Riverside-San Bernardino-Ontario, CA",40140
+6073,"San Diego , California",0.524265431270312,8.24377529017372,Main,"San Diego-Chula Vista-Carlsbad, CA",41740
+6075,"San Francisco , California",0.215585306384413,4.06910304954082,Main,"San Francisco-Oakland-Fremont, CA",41860
+6081,"San Mateo , California",0.420937423307293,5.12246513876549,Adjacent,"San Francisco-Oakland-Fremont, CA",41860
+6113,"Yolo , California",1.32413351526021,12.7722328353212,Adjacent,"Sacramento-Roseville-Folsom, CA",40900
+8001,"Adams , Colorado",1.53289299649076,12.6279889231417,Adjacent,"Denver-Aurora-Centennial, CO",19740
+8005,"Arapahoe , Colorado",0.91866609242546,7.48458544607473,Adjacent,"Denver-Aurora-Centennial, CO",19740
+8031,"Denver , Colorado",0.560457592638379,8.67081797706308,Main,"Denver-Aurora-Centennial, CO",19740
+8035,"Douglas , Colorado",0.965663614659826,6.67628425059842,Adjacent,"Denver-Aurora-Centennial, CO",19740
+8059,"Jefferson , Colorado",0.841034949637329,7.9247988329303,Adjacent,"Denver-Aurora-Centennial, CO",19740
+10003,"New Castle , Delaware",1.17219019055537,11.5002163046903,Adjacent,"Philadelphia-Camden-Wilmington, PA-NJ-DE-MD",37980
+11001,"District of Columbia, District of Columbia",0.336280390835466,4.59290625881418,Main,"Washington-Arlington-Alexandria, DC-VA-MD-WV",47900
+12011,"Broward , Florida",1.07008819590317,12.8798245422489,Adjacent,"Miami-Fort Lauderdale-West Palm Beach, FL",33100
+12053,"Hernando , Florida",2.04962356322517,17.029488328283,Adjacent,"Tampa-St. Petersburg-Clearwater, FL",45300
+12057,"Hillsborough , Florida",1.07637497799003,14.5785098112137,Main,"Tampa-St. Petersburg-Clearwater, FL",45300
+12069,"Lake , Florida",1.43640455305599,16.6133552623073,Adjacent,"Orlando-Kissimmee-Sanford, FL",36740
+12086,"Miami-Dade , Florida",0.902250700687692,11.3213261667668,Main,"Miami-Fort Lauderdale-West Palm Beach, FL",33100
+12095,"Orange , Florida",1.17774712844695,13.7679704115625,Main,"Orlando-Kissimmee-Sanford, FL",36740
+12097,"Osceola , Florida",1.70934033882858,17.3936970214357,Adjacent,"Orlando-Kissimmee-Sanford, FL",36740
+12099,"Palm Beach , Florida",1.02983141538045,12.8089693313163,Adjacent,"Miami-Fort Lauderdale-West Palm Beach, FL",33100
+12101,"Pasco , Florida",1.33948453577738,18.237910765309,Adjacent,"Tampa-St. Petersburg-Clearwater, FL",45300
+12103,"Pinellas , Florida",0.657477160201985,13.3562829695029,Adjacent,"Tampa-St. Petersburg-Clearwater, FL",45300
+12117,"Seminole , Florida",1.05927653996545,9.48600724329094,Adjacent,"Orlando-Kissimmee-Sanford, FL",36740
+13013,"Barrow , Georgia",1.74541638256115,17.7334697472174,Adjacent,"Atlanta-Sandy Springs-Roswell, GA",12060
+13015,"Bartow , Georgia",2.66716400203378,23.0627505793633,Adjacent,"Atlanta-Sandy Springs-Roswell, GA",12060
+13045,"Carroll , Georgia",1.46710078333425,21.130819472559,Adjacent,"Atlanta-Sandy Springs-Roswell, GA",12060
+13057,"Cherokee , Georgia",0.847744280808507,8.13270064255907,Adjacent,"Atlanta-Sandy Springs-Roswell, GA",12060
+13063,"Clayton , Georgia",1.84491327017833,18.1344343777487,Adjacent,"Atlanta-Sandy Springs-Roswell, GA",12060
+13067,"Cobb , Georgia",0.728584596261895,8.20984769696702,Adjacent,"Atlanta-Sandy Springs-Roswell, GA",12060
+13077,"Coweta , Georgia",2.01059854911162,15.0616739019096,Adjacent,"Atlanta-Sandy Springs-Roswell, GA",12060
+13089,"DeKalb , Georgia",1.22317362710747,14.7459046600047,Adjacent,"Atlanta-Sandy Springs-Roswell, GA",12060
+13097,"Douglas , Georgia",1.81253303273653,14.4068942216711,Adjacent,"Atlanta-Sandy Springs-Roswell, GA",12060
+13113,"Fayette , Georgia",1.90629400024087,11.5539069091918,Adjacent,"Atlanta-Sandy Springs-Roswell, GA",12060
+13117,"Forsyth , Georgia",0.819340862937445,7.16776730808931,Adjacent,"Atlanta-Sandy Springs-Roswell, GA",12060
+13121,"Fulton , Georgia",0.967578520463623,13.3146738245935,Main,"Atlanta-Sandy Springs-Roswell, GA",12060
+13135,"Gwinnett , Georgia",0.792627364931543,6.46395990701378,Adjacent,"Atlanta-Sandy Springs-Roswell, GA",12060
+13151,"Henry , Georgia",1.83835659468168,12.9084082555389,Adjacent,"Atlanta-Sandy Springs-Roswell, GA",12060
+13217,"Newton , Georgia",2.73870057786582,18.5580431434873,Adjacent,"Atlanta-Sandy Springs-Roswell, GA",12060
+13223,"Paulding , Georgia",1.77754914015403,10.3360017972737,Adjacent,"Atlanta-Sandy Springs-Roswell, GA",12060
+13247,"Rockdale , Georgia",1.5276574952847,14.7072551918585,Adjacent,"Atlanta-Sandy Springs-Roswell, GA",12060
+13255,"Spalding , Georgia",2.10233393632183,17.1925717053872,Adjacent,"Atlanta-Sandy Springs-Roswell, GA",12060
+13297,"Walton , Georgia",3.07780513849045,13.633577836974,Adjacent,"Atlanta-Sandy Springs-Roswell, GA",12060
+17031,"Cook , Illinois",0.593532017334334,6.65017626871363,Main,"Chicago-Naperville-Elgin, IL-IN",16980
+17037,"DeKalb , Illinois",0.966507134149163,11.6326124542005,Adjacent,"Chicago-Naperville-Elgin, IL-IN",16980
+17043,"DuPage , Illinois",0.454285572693305,4.4113084628945,Adjacent,"Chicago-Naperville-Elgin, IL-IN",16980
+17089,"Kane , Illinois",1.18977054838409,6.91290451836953,Adjacent,"Chicago-Naperville-Elgin, IL-IN",16980
+17093,"Kendall , Illinois",1.51681498524636,9.63089215154171,Adjacent,"Chicago-Naperville-Elgin, IL-IN",16980
+17097,"Lake , Illinois",0.729733002122349,6.64427809501883,Adjacent,"Chicago-Naperville-Elgin, IL-IN",16980
+17111,"McHenry , Illinois",2.00685508483142,8.20730679867254,Adjacent,"Chicago-Naperville-Elgin, IL-IN",16980
+17119,"Madison , Illinois",1.39919122275513,13.392982805855,Adjacent,"St. Louis, MO-IL",41180
+17163,"St. Clair , Illinois",1.17153987362328,14.2852081223445,Adjacent,"St. Louis, MO-IL",41180
+17197,"Will , Illinois",0.946472183283094,8.96242541343633,Adjacent,"Chicago-Naperville-Elgin, IL-IN",16980
+18011,"Boone , Indiana",2.86144750589913,11.4698718384265,Adjacent,"Indianapolis-Carmel-Greenwood, IN",26900
+18057,"Hamilton , Indiana",0.563050469383639,4.74191842949859,Adjacent,"Indianapolis-Carmel-Greenwood, IN",26900
+18059,"Hancock , Indiana",2.04216918665554,14.259680921771,Adjacent,"Indianapolis-Carmel-Greenwood, IN",26900
+18063,"Hendricks , Indiana",0.709792749833001,7.88759335814389,Adjacent,"Indianapolis-Carmel-Greenwood, IN",26900
+18081,"Johnson , Indiana",1.64730274575572,7.40813067621487,Adjacent,"Indianapolis-Carmel-Greenwood, IN",26900
+18089,"Lake , Indiana",1.09907634549761,11.7453273566799,Adjacent,"Chicago-Naperville-Elgin, IL-IN",16980
+18095,"Madison , Indiana",1.92006865208495,15.4997824062836,Adjacent,"Indianapolis-Carmel-Greenwood, IN",26900
+18097,"Marion , Indiana",0.990389646899172,12.8544361783157,Main,"Indianapolis-Carmel-Greenwood, IN",26900
+18109,"Morgan , Indiana",1.6949615004001,10.1032093726356,Adjacent,"Indianapolis-Carmel-Greenwood, IN",26900
+18127,"Porter , Indiana",1.60106601504066,12.5510095517815,Adjacent,"Chicago-Naperville-Elgin, IL-IN",16980
+20091,"Johnson , Kansas",0.786125675158263,4.60538830144915,Adjacent,"Kansas City, MO-KS",28140
+20103,"Leavenworth , Kansas",2.23594528129961,15.3360794468513,Adjacent,"Kansas City, MO-KS",28140
+20209,"Wyandotte , Kansas",2.30263324151277,15.6072338185184,Main,"Kansas City, MO-KS",28140
+21015,"Boone , Kentucky",1.80098308738979,8.72088672202416,Adjacent,"Cincinnati, OH-KY-IN",17140
+21037,"Campbell , Kentucky",1.79376085633588,9.40201920173431,Adjacent,"Cincinnati, OH-KY-IN",17140
+21117,"Kenton , Kentucky",2.61543713712881,8.08483219462202,Adjacent,"Cincinnati, OH-KY-IN",17140
+24003,"Anne Arundel , Maryland",0.684834396062145,7.82374992164805,Adjacent,"Baltimore-Columbia-Towson, MD",12580
+24005,"Baltimore , Maryland",0.780337289624326,8.49431181825499,Main,"Baltimore-Columbia-Towson, MD",12580
+24013,"Carroll , Maryland",2.15980783490396,9.22962944302605,Adjacent,"Baltimore-Columbia-Towson, MD",12580
+24015,"Cecil , Maryland",4.13109454841885,21.0392934955732,Adjacent,"Philadelphia-Camden-Wilmington, PA-NJ-DE-MD",37980
+24017,"Charles , Maryland",1.77260621283627,14.7515321044229,Adjacent,"Washington-Arlington-Alexandria, DC-VA-MD-WV",47900
+24021,"Frederick , Maryland",0.62615953933478,9.39580109885898,Adjacent,"Washington-Arlington-Alexandria, DC-VA-MD-WV",47900
+24025,"Harford , Maryland",0.944714682525483,7.09336951695035,Adjacent,"Baltimore-Columbia-Towson, MD",12580
+24027,"Howard , Maryland",0.734945028694784,7.68965208671569,Adjacent,"Baltimore-Columbia-Towson, MD",12580
+24031,"Montgomery , Maryland",0.237440263276616,3.84871289025131,Adjacent,"Washington-Arlington-Alexandria, DC-VA-MD-WV",47900
+24033,"Prince George's , Maryland",0.90107486060709,12.1182672776217,Adjacent,"Washington-Arlington-Alexandria, DC-VA-MD-WV",47900
+24510,"Baltimore city, Maryland",0.61182428456002,7.58835599419821,Adjacent,"Baltimore-Columbia-Towson, MD",12580
+25009,"Essex , Massachusetts",0.407230343103359,4.25655509155513,Adjacent,"Boston-Cambridge-Newton, MA-NH",14460
+25017,"Middlesex , Massachusetts",0.15110500257568,3.04372416266643,Adjacent,"Boston-Cambridge-Newton, MA-NH",14460
+25021,"Norfolk , Massachusetts",0.597846863467136,5.09914449995232,Adjacent,"Boston-Cambridge-Newton, MA-NH",14460
+25023,"Plymouth , Massachusetts",0.520317538593801,7.17026749939249,Adjacent,"Boston-Cambridge-Newton, MA-NH",14460
+25025,"Suffolk , Massachusetts",0.296171916004325,3.45405355956179,Main,"Boston-Cambridge-Newton, MA-NH",14460
+26087,"Lapeer , Michigan",1.13119099819895,13.7601841013684,Adjacent,"Detroit-Warren-Dearborn, MI",19820
+26093,"Livingston , Michigan",0.823767334740174,8.9630827872821,Adjacent,"Detroit-Warren-Dearborn, MI",19820
+26099,"Macomb , Michigan",0.514214992027382,6.3115724081339,Adjacent,"Detroit-Warren-Dearborn, MI",19820
+26125,"Oakland , Michigan",0.381302094004692,5.41718193481079,Adjacent,"Detroit-Warren-Dearborn, MI",19820
+26147,"St. Clair , Michigan",1.80869799358968,14.222881830818,Adjacent,"Detroit-Warren-Dearborn, MI",19820
+26163,"Wayne , Michigan",0.949045806511846,10.6739589715532,Main,"Detroit-Warren-Dearborn, MI",19820
+27003,"Anoka , Minnesota",0.561283825106971,6.39302253195978,Adjacent,"Minneapolis-St. Paul-Bloomington, MN-WI",33460
+27019,"Carver , Minnesota",1.42011272099206,6.93355042854907,Adjacent,"Minneapolis-St. Paul-Bloomington, MN-WI",33460
+27037,"Dakota , Minnesota",0.494759879993046,4.35752918207088,Adjacent,"Minneapolis-St. Paul-Bloomington, MN-WI",33460
+27053,"Hennepin , Minnesota",0.433346031703607,4.59082033307027,Main,"Minneapolis-St. Paul-Bloomington, MN-WI",33460
+27123,"Ramsey , Minnesota",0.643476053512873,4.99821012657539,Adjacent,"Minneapolis-St. Paul-Bloomington, MN-WI",33460
+27139,"Scott , Minnesota",1.96171110154923,6.60616715028491,Adjacent,"Minneapolis-St. Paul-Bloomington, MN-WI",33460
+27141,"Sherburne , Minnesota",1.38310557033452,9.95298510966199,Adjacent,"Minneapolis-St. Paul-Bloomington, MN-WI",33460
+27163,"Washington , Minnesota",0.373276825931059,3.41960112271258,Adjacent,"Minneapolis-St. Paul-Bloomington, MN-WI",33460
+27171,"Wright , Minnesota",1.02892613665494,6.25558269730937,Adjacent,"Minneapolis-St. Paul-Bloomington, MN-WI",33460
+29037,"Cass , Missouri",2.79916059289133,14.4825709816877,Adjacent,"Kansas City, MO-KS",28140
+29047,"Clay , Missouri",0.628644543480842,8.01131916282416,Adjacent,"Kansas City, MO-KS",28140
+29071,"Franklin , Missouri",2.86814758141084,23.1269172468907,Adjacent,"St. Louis, MO-IL",41180
+29095,"Jackson , Missouri",1.59163725102062,14.7699076550809,Adjacent,"Kansas City, MO-KS",28140
+29099,"Jefferson , Missouri",2.75565074507441,17.3907506361747,Adjacent,"St. Louis, MO-IL",41180
+29165,"Platte , Missouri",1.33350446280246,10.6079878356979,Adjacent,"Kansas City, MO-KS",28140
+29183,"St. Charles , Missouri",1.10054617548333,8.8263768141974,Adjacent,"St. Louis, MO-IL",41180
+29189,"St. Louis , Missouri",1.12870839341239,9.18396956654227,Main,"St. Louis, MO-IL",41180
+29510,"St. Louis city, Missouri",2.24912458350486,21.711958716546,Adjacent,"St. Louis, MO-IL",41180
+32003,"Clark , Nevada",0.715369501539592,9.87543917145771,Main,"Las Vegas-Henderson-North Las Vegas, NV",29820
+33015,"Rockingham , New Hampshire",0.750609896418209,7.13939035230526,Adjacent,"Boston-Cambridge-Newton, MA-NH",14460
+33017,"Strafford , New Hampshire",2.33257913274708,9.52889885901081,Adjacent,"Boston-Cambridge-Newton, MA-NH",14460
+34003,"Bergen , New Jersey",0.414560748682717,4.01739891780576,Adjacent,"New York-Newark-Jersey City, NY-NJ",35620
+34005,"Burlington , New Jersey",0.752667761588953,9.86753880274157,Adjacent,"Philadelphia-Camden-Wilmington, PA-NJ-DE-MD",37980
+34007,"Camden , New Jersey",0.864938117525411,9.64222423094116,Adjacent,"Philadelphia-Camden-Wilmington, PA-NJ-DE-MD",37980
+34013,"Essex , New Jersey",0.261822281276832,5.8858440261297,Adjacent,"New York-Newark-Jersey City, NY-NJ",35620
+34015,"Gloucester , New Jersey",1.34557302618259,14.4817453546467,Adjacent,"Philadelphia-Camden-Wilmington, PA-NJ-DE-MD",37980
+34017,"Hudson , New Jersey",0.578333041757091,3.43500175331266,Adjacent,"New York-Newark-Jersey City, NY-NJ",35620
+34019,"Hunterdon , New Jersey",1.17036385231466,5.17156935608742,Adjacent,"New York-Newark-Jersey City, NY-NJ",35620
+34023,"Middlesex , New Jersey",0.391523705306994,5.95656276431339,Adjacent,"New York-Newark-Jersey City, NY-NJ",35620
+34025,"Monmouth , New Jersey",0.337716015738597,6.35052957354835,Adjacent,"New York-Newark-Jersey City, NY-NJ",35620
+34027,"Morris , New Jersey",0.527467298399267,5.25119386680712,Adjacent,"New York-Newark-Jersey City, NY-NJ",35620
+34029,"Ocean , New Jersey",0.555305760133028,7.16929613490902,Adjacent,"New York-Newark-Jersey City, NY-NJ",35620
+34031,"Passaic , New Jersey",0.561510177418057,4.89394321904191,Adjacent,"New York-Newark-Jersey City, NY-NJ",35620
+34033,"Salem , New Jersey",4.08014520320574,22.5016825358423,Adjacent,"Philadelphia-Camden-Wilmington, PA-NJ-DE-MD",37980
+34035,"Somerset , New Jersey",1.15353093297604,6.02340699250973,Adjacent,"New York-Newark-Jersey City, NY-NJ",35620
+34037,"Sussex , New Jersey",1.76984676575024,8.28852953858673,Adjacent,"New York-Newark-Jersey City, NY-NJ",35620
+34039,"Union , New Jersey",0.354014349436835,4.98291375211902,Adjacent,"New York-Newark-Jersey City, NY-NJ",35620
+36005,"Bronx , New York",0.198301983442195,2.86685446649391,Adjacent,"New York-Newark-Jersey City, NY-NJ",35620
+36047,"Kings , New York",0.205490015719353,2.68673504311162,Adjacent,"New York-Newark-Jersey City, NY-NJ",35620
+36059,"Nassau , New York",0.41115428378921,5.62932314079454,Adjacent,"New York-Newark-Jersey City, NY-NJ",35620
+36061,"New York , New York",0.135096800186427,2.43125366360436,Main,"New York-Newark-Jersey City, NY-NJ",35620
+36079,"Putnam , New York",1.01195160397813,6.95871645181983,Adjacent,"New York-Newark-Jersey City, NY-NJ",35620
+36081,"Queens , New York",0.257387559001249,2.83059100591523,Adjacent,"New York-Newark-Jersey City, NY-NJ",35620
+36085,"Richmond , New York",0.479303282255369,2.41817495237229,Adjacent,"New York-Newark-Jersey City, NY-NJ",35620
+36087,"Rockland , New York",0.89108438136917,4.85564145779233,Adjacent,"New York-Newark-Jersey City, NY-NJ",35620
+36103,"Suffolk , New York",0.73293113469412,9.24516547471054,Adjacent,"New York-Newark-Jersey City, NY-NJ",35620
+36119,"Westchester , New York",0.363855394430892,3.46327915919183,Adjacent,"New York-Newark-Jersey City, NY-NJ",35620
+37025,"Cabarrus , North Carolina",1.85916526146413,10.6464198826793,Adjacent,"Charlotte-Concord-Gastonia, NC-SC",16740
+37071,"Gaston , North Carolina",0.757085800452735,9.99000981554896,Adjacent,"Charlotte-Concord-Gastonia, NC-SC",16740
+37097,"Iredell , North Carolina",1.88131761853123,13.8772954939138,Adjacent,"Charlotte-Concord-Gastonia, NC-SC",16740
+37109,"Lincoln , North Carolina",1.11773168310874,14.7021079500066,Adjacent,"Charlotte-Concord-Gastonia, NC-SC",16740
+37119,"Mecklenburg , North Carolina",0.743350607480036,9.92633417999282,Main,"Charlotte-Concord-Gastonia, NC-SC",16740
+37159,"Rowan , North Carolina",1.73120298891594,14.8074742340101,Adjacent,"Charlotte-Concord-Gastonia, NC-SC",16740
+37179,"Union , North Carolina",1.89801662480019,10.524797849466,Adjacent,"Charlotte-Concord-Gastonia, NC-SC",16740
+39017,"Butler , Ohio",0.841986736215642,7.76660899643534,Adjacent,"Cincinnati, OH-KY-IN",17140
+39025,"Clermont , Ohio",1.06221451854827,8.85329207793497,Adjacent,"Cincinnati, OH-KY-IN",17140
+39061,"Hamilton , Ohio",0.684553591616487,7.67688689553172,Main,"Cincinnati, OH-KY-IN",17140
+39165,"Warren , Ohio",1.50902015412497,7.64404356860019,Adjacent,"Cincinnati, OH-KY-IN",17140
+41005,"Clackamas , Oregon",0.741312098597757,8.81270611242465,Adjacent,"Portland-Vancouver-Hillsboro, OR-WA",38900
+41051,"Multnomah , Oregon",0.421181591320271,8.4972480124447,Main,"Portland-Vancouver-Hillsboro, OR-WA",38900
+41067,"Washington , Oregon",0.547195953795874,4.531460902484,Adjacent,"Portland-Vancouver-Hillsboro, OR-WA",38900
+41071,"Yamhill , Oregon",3.81413880063699,13.6281538093067,Adjacent,"Portland-Vancouver-Hillsboro, OR-WA",38900
+42017,"Bucks , Pennsylvania",0.724497659045843,8.26611149029955,Adjacent,"Philadelphia-Camden-Wilmington, PA-NJ-DE-MD",37980
+42029,"Chester , Pennsylvania",0.605046380717612,6.3774900405305,Adjacent,"Philadelphia-Camden-Wilmington, PA-NJ-DE-MD",37980
+42045,"Delaware , Pennsylvania",0.390053471775015,4.51671926389769,Adjacent,"Philadelphia-Camden-Wilmington, PA-NJ-DE-MD",37980
+42091,"Montgomery , Pennsylvania",0.257818307096112,5.37822617214505,Adjacent,"Philadelphia-Camden-Wilmington, PA-NJ-DE-MD",37980
+42101,"Philadelphia , Pennsylvania",0.679365247514869,7.30751946860304,Main,"Philadelphia-Camden-Wilmington, PA-NJ-DE-MD",37980
+45057,"Lancaster , South Carolina",3.265549172798,18.000581710017,Adjacent,"Charlotte-Concord-Gastonia, NC-SC",16740
+45091,"York , South Carolina",1.52302477447303,13.6070846383463,Adjacent,"Charlotte-Concord-Gastonia, NC-SC",16740
+48029,"Bexar , Texas",0.708271803934736,9.98581048496879,Main,"San Antonio-New Braunfels, TX",41700
+48039,"Brazoria , Texas",1.61380548579441,11.3041415829339,Adjacent,"Houston-Pasadena-The Woodlands, TX",26420
+48085,"Collin , Texas",0.903626374975628,5.67410628822154,Adjacent,"Dallas-Fort Worth-Arlington, TX",19100
+48091,"Comal , Texas",1.13762384826727,11.4789178425748,Adjacent,"San Antonio-New Braunfels, TX",41700
+48113,"Dallas , Texas",1.03937268579539,11.9575322607187,Main,"Dallas-Fort Worth-Arlington, TX",19100
+48121,"Denton , Texas",0.763412051074963,6.25040569949041,Adjacent,"Dallas-Fort Worth-Arlington, TX",19100
+48139,"Ellis , Texas",2.18563959309482,15.508523969272,Adjacent,"Dallas-Fort Worth-Arlington, TX",19100
+48157,"Fort Bend , Texas",0.748424488267552,4.86339877823072,Adjacent,"Houston-Pasadena-The Woodlands, TX",26420
+48167,"Galveston , Texas",1.27491404531628,11.6223691427252,Adjacent,"Houston-Pasadena-The Woodlands, TX",26420
+48187,"Guadalupe , Texas",1.3324016286772,12.26867198602,Adjacent,"San Antonio-New Braunfels, TX",41700
+48201,"Harris , Texas",0.856982085365591,10.1774195567133,Main,"Houston-Pasadena-The Woodlands, TX",26420
+48231,"Hunt , Texas",3.11160225973376,26.5653275036116,Adjacent,"Dallas-Fort Worth-Arlington, TX",19100
+48251,"Johnson , Texas",2.22733262399474,18.1635239400795,Adjacent,"Dallas-Fort Worth-Arlington, TX",19100
+48257,"Kaufman , Texas",3.63578952894215,20.6215597740938,Adjacent,"Dallas-Fort Worth-Arlington, TX",19100
+48291,"Liberty , Texas",3.25258062939242,28.5731963090102,Adjacent,"Houston-Pasadena-The Woodlands, TX",26420
+48339,"Montgomery , Texas",0.968062675075119,9.26995635148542,Adjacent,"Houston-Pasadena-The Woodlands, TX",26420
+48367,"Parker , Texas",2.44914896753312,16.2099608228315,Adjacent,"Dallas-Fort Worth-Arlington, TX",19100
+48397,"Rockwall , Texas",0.882394080071678,6.49003009072848,Adjacent,"Dallas-Fort Worth-Arlington, TX",19100
+48439,"Tarrant , Texas",1.01922237530164,9.28615527143974,Adjacent,"Dallas-Fort Worth-Arlington, TX",19100
+48497,"Wise , Texas",5.8880081480408,26.3875514715946,Adjacent,"Dallas-Fort Worth-Arlington, TX",19100
+51013,"Arlington , Virginia",0.42829972808725,2.13245101322328,Adjacent,"Washington-Arlington-Alexandria, DC-VA-MD-WV",47900
+51059,"Fairfax , Virginia",0.428091975857348,4.5354935545289,Adjacent,"Washington-Arlington-Alexandria, DC-VA-MD-WV",47900
+51061,"Fauquier , Virginia",3.28116350389241,20.8116118781513,Adjacent,"Washington-Arlington-Alexandria, DC-VA-MD-WV",47900
+51107,"Loudoun , Virginia",0.421081496647081,3.45103016799624,Adjacent,"Washington-Arlington-Alexandria, DC-VA-MD-WV",47900
+51153,"Prince William , Virginia",1.13154189855141,5.58751275225118,Adjacent,"Washington-Arlington-Alexandria, DC-VA-MD-WV",47900
+51177,"Spotsylvania , Virginia",2.3243925367817,13.3009130112503,Adjacent,"Washington-Arlington-Alexandria, DC-VA-MD-WV",47900
+51179,"Stafford , Virginia",1.78570604981451,6.82232518535934,Adjacent,"Washington-Arlington-Alexandria, DC-VA-MD-WV",47900
+51510,"Alexandria city, Virginia",0.633923377163512,3.72317821995281,Adjacent,"Washington-Arlington-Alexandria, DC-VA-MD-WV",47900
+53011,"Clark , Washington",0.949136594413492,6.5481574669493,Adjacent,"Portland-Vancouver-Hillsboro, OR-WA",38900
+53033,"King , Washington",0.328580378363108,5.50752734920277,Main,"Seattle-Tacoma-Bellevue, WA",42660
+53053,"Pierce , Washington",0.560832664184463,8.42813937469096,Adjacent,"Seattle-Tacoma-Bellevue, WA",42660
+53061,"Snohomish , Washington",0.418380966982124,5.23340810607183,Adjacent,"Seattle-Tacoma-Bellevue, WA",42660
+55109,"St. Croix , Wisconsin",2.81222804003189,10.0101702917865,Adjacent,"Minneapolis-St. Paul-Bloomington, MN-WI",33460

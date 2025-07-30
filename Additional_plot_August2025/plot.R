@@ -3,7 +3,7 @@ msa<- read.csv("master_fatality_cbsa30.csv")
 
 county<- read.csv("youth_msa_county_wide_modified.csv")
 
-county_main<-county%>%
+county_main <- county %>%
   filter(Main == "Main")
 # Calculate mean and standard deviation
 mean_rate <- mean(msa$rate_overall, na.rm = TRUE)

@@ -1,13 +1,14 @@
-setwd("/Users/zhanchaoyang/Desktop")
-if (!file.exists("master_fatality_cbsa30.csv")) {
+library(tidyverse)
+
+if (!file.exists("Additional_plot_August2025/master_fatality_cbsa30.csv")) {
   stop("Error: The file 'master_fatality_cbsa30.csv' does not exist in the working directory. Please ensure the file is available.")
 }
-msa <- read.csv("master_fatality_cbsa30.csv")
+msa <- read.csv("Additional_plot_August2025/master_fatality_cbsa30.csv")
 
-if (!file.exists("youth_msa_county_wide_modified.csv")) {
+if (!file.exists("Additional_plot_August2025/youth_msa_county_wide_modified.csv")) {
   stop("Error: The file 'youth_msa_county_wide_modified.csv' does not exist in the working directory. Please ensure the file is available.")
 }
-county <- read.csv("youth_msa_county_wide_modified.csv")
+county <- read.csv("Additional_plot_August2025/youth_msa_county_wide_modified.csv")
 
 county_main <- county %>%
   filter(Main == "Main")

@@ -37,25 +37,25 @@ ggplot(msa, aes(x = rate_overall)) +
   theme_minimal()
 
 
-# county_mean_rate <- mean(county_main$rate_total, na.rm = TRUE)
-# county_sd_rate <- sd(county_main$rate_total, na.rm = TRUE)
-# 
-# # Plot
-# ggplot(county_main, aes(x = rate_total)) +
-#   geom_histogram(aes(y = after_stat(density)), binwidth = 0.5, fill = "lightgray", color = "black") +
-#   geom_density(color = "blue", linewidth = 1) +
-#   stat_function(fun = dnorm,
-#                 args = list(mean = county_mean_rate, sd = county_sd_rate),
-#                 color = "red", linetype = "dashed") +
-#   geom_vline(xintercept = county_mean_rate, color = "darkgreen", linetype = "solid", linewidth = 1) +
-#   geom_vline(xintercept = county_mean_rate + county_sd_rate, color = "orange", linetype = "dashed", linewidth = 0.8) +
-#   geom_vline(xintercept = county_mean_rate - county_sd_rate, color = "orange", linetype = "dashed", linewidth = 0.8) +
-#   labs(
-#     title = "Distribution of Fatality Rates with Normal Curve and ±1 SD",
-#     subtitle = paste0("Mean = ", round(county_mean_rate, 2),
-#                       ", SD = ", round(county_sd_rate, 2),
-#                       " | Dashed lines represent ±1 SD"),
-#     x = "Fatality Rate",
-#     y = "Density"
-#   ) +
-#   theme_minimal()
+county_mean_rate <- mean(county_main$rate_total, na.rm = TRUE)
+county_sd_rate <- sd(county_main$rate_total, na.rm = TRUE)
+
+# Plot
+ggplot(county_main, aes(x = rate_total)) +
+  geom_histogram(aes(y = after_stat(density)), binwidth = 0.5, fill = "lightgray", color = "black") +
+  geom_density(color = "blue", linewidth = 1) +
+  stat_function(fun = dnorm,
+                args = list(mean = county_mean_rate, sd = county_sd_rate),
+                color = "red", linetype = "dashed") +
+  geom_vline(xintercept = county_mean_rate, color = "darkgreen", linetype = "solid", linewidth = 1) +
+  geom_vline(xintercept = county_mean_rate + county_sd_rate, color = "orange", linetype = "dashed", linewidth = 0.8) +
+  geom_vline(xintercept = county_mean_rate - county_sd_rate, color = "orange", linetype = "dashed", linewidth = 0.8) +
+  labs(
+    title = "Distribution of Fatality Rates with Normal Curve and ±1 SD",
+    subtitle = paste0("Mean = ", round(county_mean_rate, 2),
+                      ", SD = ", round(county_sd_rate, 2),
+                      " | Dashed lines represent ±1 SD"),
+    x = "Fatality Rate",
+    y = "Density"
+  ) +
+  theme_minimal()

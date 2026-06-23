@@ -16,8 +16,8 @@ county_main <- county %>%
 mean_rate <- mean(msa$rate_overall, na.rm = TRUE)
 sd_rate <- sd(msa$rate_overall, na.rm = TRUE)
 
-# Plot
-ggplot(msa, aes(x = rate_overall)) +
+# Plot (CBSA / MSA version)
+p_msa <- ggplot(msa, aes(x = rate_overall)) +
   geom_histogram(aes(y = after_stat(density)), binwidth = 0.5, fill = "lightgray", color = "black") +
   geom_density(color = "blue", linewidth = 1) +
   stat_function(fun = dnorm,
@@ -35,13 +35,16 @@ ggplot(msa, aes(x = rate_overall)) +
     y = "Density"
   ) +
   theme_minimal()
+print(p_msa)
+ggsave("Additional_plot_August2025/msa.png", p_msa,
+       width = 7.03, height = 5.09, dpi = 200, bg = "white", device = ragg::agg_png)
 
 
 county_mean_rate <- mean(county_main$rate_total, na.rm = TRUE)
 county_sd_rate <- sd(county_main$rate_total, na.rm = TRUE)
 
-# Plot
-ggplot(county_main, aes(x = rate_total)) +
+# Plot (central county version)
+p_county <- ggplot(county_main, aes(x = rate_total)) +
   geom_histogram(aes(y = after_stat(density)), binwidth = 0.5, fill = "lightgray", color = "black") +
   geom_density(color = "blue", linewidth = 1) +
   stat_function(fun = dnorm,
@@ -59,3 +62,6 @@ ggplot(county_main, aes(x = rate_total)) +
     y = "Density"
   ) +
   theme_minimal()
+print(p_county)
+ggsave("Additional_plot_August2025/central county.png", p_county,
+       width = 7.03, height = 5.09, dpi = 200, bg = "white", device = ragg::agg_png)

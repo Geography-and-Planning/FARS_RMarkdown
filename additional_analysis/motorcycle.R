@@ -13,8 +13,6 @@ FARS2023<- dbGetQuery(con, "SELECT * FROM person2023")
 FARS2022<- dbGetQuery(con, "SELECT * FROM person2022")
 FARS2021<- dbGetQuery(con, "SELECT * FROM person2021")
 FARS2019<- dbGetQuery(con, "SELECT * FROM person2019")
-FARS2018<- dbGetQuery(con, "SELECT * FROM person2018")
-FARS2017<- dbGetQuery(con, "SELECT * FROM person2017")
 
 dbDisconnect(con, shutdown = TRUE)
 
@@ -34,12 +32,6 @@ FARS2024<- FARS2024%>%
 FARS2019<- FARS2019%>%
   filter(INJ_SEV==4)
 
-FARS2018<- FARS2018%>%
-  filter(INJ_SEV==4)
-
-FARS2017<- FARS2017%>%
-  filter(INJ_SEV==4)
-
 FARS2024<- FARS2024%>%
   mutate(FIPS= sprintf("%02d%03d", FARS2024$STATE, FARS2024$COUNTY) )
 
@@ -55,12 +47,6 @@ FARS2021<- FARS2021%>%
 FARS2019<- FARS2019%>%
   mutate(FIPS= sprintf("%02d%03d", FARS2019$STATE, FARS2019$COUNTY) )
 
-FARS2018<- FARS2018%>%
-  mutate(FIPS= sprintf("%02d%03d", FARS2018$STATE, FARS2018$COUNTY) )
-
-FARS2017<- FARS2017%>%
-  mutate(FIPS= sprintf("%02d%03d", FARS2017$STATE, FARS2017$COUNTY) )
-
 
 FARS2024<- FARS2024%>%
   select(FIPS, PER_TYP, AGE)
@@ -77,14 +63,8 @@ FARS2021<- FARS2021%>%
 FARS2019<- FARS2019%>%
   select(FIPS, PER_TYP, AGE)
 
-FARS2018<- FARS2018%>%
-  select(FIPS, PER_TYP, AGE)
 
-FARS2017<- FARS2017%>%
-  select(FIPS, PER_TYP, AGE)
-
-
-complete<- rbind(FARS2024, FARS2023, FARS2022, FARS2021, FARS2019, FARS2018, FARS2017)
+complete<- rbind(FARS2024, FARS2023, FARS2022, FARS2021, FARS2019)
 
 complete<- complete%>%
   mutate(age_group= case_when(
@@ -152,22 +132,6 @@ tot_pop2019<-get_acs(
 tot_pop2019<- tot_pop2019%>%
   filter(GEOID %in% adults$cbsa)
 
-tot2018<-get_acs(
-  geography= "Metropolitan Statistical Area/Micropolitan Statistical Area",
-  variables= c(tot_pop= "B01001_001"),
-  year= 2018,
-  survey= "acs1"
-)%>%
-  filter(GEOID %in% adults$cbsa)
-
-tot2017<-get_acs(
-  geography= "Metropolitan Statistical Area/Micropolitan Statistical Area",
-  variables= c(tot_pop= "B01001_001"),
-  year= 2017,
-  survey= "acs1"
-)%>%
-  filter(GEOID %in% adults$cbsa)
-
 tot2021<-get_acs(
   geography= "Metropolitan Statistical Area/Micropolitan Statistical Area",
   variables= c(tot_pop= "B01001_001"),
@@ -200,7 +164,7 @@ tot2024<-get_acs(
 )%>%
   filter(GEOID %in% adults$cbsa)
 
-pop<- rbind(tot_pop2019, tot2018, tot2017, tot2021, tot2022, tot2023, tot2024)
+pop<- rbind(tot_pop2019, tot2021, tot2022, tot2023, tot2024)
 
 pop<-pop%>%
   group_by(GEOID)%>%
@@ -240,22 +204,6 @@ children_2019<- get_acs(
 )%>%
   filter(GEOID %in% children$cbsa)
 
-children_2018<- get_acs(
-  geography= "Metropolitan Statistical Area/Micropolitan Statistical Area",
-  variables= "B09001_001E",
-  year= 2018,
-  survey= "acs1"
-)%>%
-  filter(GEOID %in% children$cbsa)
-
-children_2017<- get_acs(
-  geography= "Metropolitan Statistical Area/Micropolitan Statistical Area",
-  variables= "B09001_001E",
-  year= 2017,
-  survey= "acs1"
-)%>%
-  filter(GEOID %in% children$cbsa)
-
 children_2023<- get_acs(
   geography= "Metropolitan Statistical Area/Micropolitan Statistical Area",
   variables= "B09001_001E",
@@ -272,7 +220,7 @@ children_2024<- get_acs(
 )%>%
   filter(GEOID %in% children$cbsa)
 
-children_pop<- rbind(children_2024, children_2023, children_2022, children_2021, children_2019, children_2018, children_2017)
+children_pop<- rbind(children_2024, children_2023, children_2022, children_2021, children_2019)
 
 children_pop<-children_pop%>%
   group_by(GEOID)%>%
@@ -299,7 +247,7 @@ ggplot(children_adults, aes(x=walk_children, y=rate,label=cbsa_name.x))+
   geom_text_repel(size = 3, box.padding = 0.5, point.padding = 0.3)+
   labs(
     title="CBSA walking fatality rate",
-    subtitle = "Top 30 most populated, 2017 - 2024",
+    subtitle = "Top 30 most populated, 2019, 2021-2024",
     x="Children walking Fatality Rate (per 100,000)",
     y="Total walking Fatality Rate (per 100,000)"
   )+
@@ -344,7 +292,7 @@ ggplot(walk2, aes(x=children, y=adults, label=cbsa_name.x))+
   geom_text_repel(size = 3, box.padding = 0.5, point.padding = 0.3)+
   labs(
     title="CBSA walking fatality percentage",
-    subtitle = "Top 30 most populated, 2017 - 2024",
+    subtitle = "Top 30 most populated, 2019, 2021-2024",
     x="Children walking Fatality percentage (%)",
     y="Total walking Fatality percentage (%)"
   )+
@@ -376,7 +324,7 @@ ggplot(longer, aes(x=children, y=adults, label=cbsa_name.x))+
   geom_text_repel(size = 3, box.padding = 0.5, point.padding = 0.3)+
   labs(
     title="CBSA walking fatality percentage",
-    subtitle = "Top 30 most populated, 2017 - 2024",
+    subtitle = "Top 30 most populated, 2019, 2021-2024",
     x="Children walking Fatality percentage (%)",
     y="Total walking Fatality percentage (%)"
   )+
@@ -413,7 +361,7 @@ ggplot(longer2, aes(x=children, y=adults, label=cbsa_name.x))+
   geom_text_repel(size = 3, box.padding = 0.5, point.padding = 0.3)+
   labs(
     title="CBSA fatality rate by mode",
-    subtitle = "Top 30 most populated, 2017 - 2024",
+    subtitle = "Top 30 most populated, 2019, 2021-2024",
     x="Children Fatality Rate (per 100,000)",
     y="Total Fatality Rate (per 100,000)"
   )+

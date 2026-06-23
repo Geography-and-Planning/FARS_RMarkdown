@@ -74,9 +74,9 @@ write.csv(result, "data/mastersheetFARS.csv")
 dbDisconnect(con, shutdown = TRUE)
 
 
-# Youth fatility number by county, in 2017-2019, 2021-2022)
+# Youth fatility number by county, in 2019, 2021-2024)
 master<-read.csv("data/mastersheetFARS.csv")%>%
-  filter(YEAR>2016 & YEAR!=2020)
+  filter(YEAR %in% c(2019, 2021, 2022, 2023, 2024))
 master<-master%>%
   mutate(county_code= sprintf("%02d%03d", master$STATE, master$COUNTY))
 
@@ -137,20 +137,6 @@ tot_pop2019<-get_acs(
 )
 
 
-tot2018<-get_acs(
-  geography= "Metropolitan Statistical Area/Micropolitan Statistical Area",
-  variables= c(tot_pop= "B01001_001"),
-  year= 2018,
-  survey= "acs1"
-)
-
-tot2017<-get_acs(
-  geography= "Metropolitan Statistical Area/Micropolitan Statistical Area",
-  variables= c(tot_pop= "B01001_001"),
-  year= 2017,
-  survey= "acs1"
-)
-
 tot2021<-get_acs(
   geography= "Metropolitan Statistical Area/Micropolitan Statistical Area",
   variables= c(tot_pop= "B01001_001"),
@@ -178,7 +164,7 @@ tot2024<-get_acs(
   year= 2024,
   survey= "acs1"
 )
-pop<- rbind(tot_pop2019, tot2018, tot2017, tot2021, tot2022, tot2023, tot2024)
+pop<- rbind(tot_pop2019, tot2021, tot2022, tot2023, tot2024)
 
 # join
 pop<-pop%>%
@@ -214,20 +200,6 @@ children_2019<- get_acs(
   survey= "acs1"
 )
 
-children_2018<- get_acs(
-  geography= "Metropolitan Statistical Area/Micropolitan Statistical Area",
-  variables= "B09001_001E",
-  year= 2018,
-  survey= "acs1"
-)
-
-children_2017<- get_acs(
-  geography= "Metropolitan Statistical Area/Micropolitan Statistical Area",
-  variables= "B09001_001E",
-  year= 2017,
-  survey= "acs1"
-)
-
 children_2023<- get_acs(
   geography= "Metropolitan Statistical Area/Micropolitan Statistical Area",
   variables= "B09001_001E",
@@ -242,7 +214,7 @@ children_2024<- get_acs(
   survey= "acs1"
 )
 
-children_pop<- rbind(children_2024, children_2023, children_2022, children_2021, children_2019, children_2018, children_2017)
+children_pop<- rbind(children_2024, children_2023, children_2022, children_2021, children_2019)
 
 # join
 children_pop<-children_pop%>%
@@ -270,7 +242,7 @@ ggplot(master_fatality, aes(x=rate_children, y=rate_overall))+
   geom_smooth(method = "lm", se=FALSE)+
   labs(
     title="CBSA fatality rate",
-    subtitle = "Top 30 most populated, 2017 - 2024",
+    subtitle = "Top 30 most populated, 2019, 2021-2024",
     x="Children Fatality Rate (per 100,000)",
     y="Total Fatality Rate (per 100,000)"
   )+
@@ -294,7 +266,7 @@ ggplot(master_fatality_30, aes(x=rate_children, y=rate_overall,label=name))+
   geom_text_repel(size = 3, box.padding = 0.5, point.padding = 0.3)+
   labs(
     title="CBSA fatality rate",
-    subtitle = "Top 30 most populated, 2017 - 2024",
+    subtitle = "Top 30 most populated, 2019, 2021-2024",
     x="Children Fatality Rate (per 100,000)",
     y="Total Fatality Rate (per 100,000)"
   )+
@@ -313,7 +285,7 @@ ggplot(master_fatality_30, aes(x=rate_children, y=rate_overall,label=name))+
 
 # county
 master_county<-read.csv("data/mastersheetFARS.csv")%>%
-  filter(YEAR>2016 & YEAR!=2020)
+  filter(YEAR %in% c(2019, 2021, 2022, 2023, 2024))
 fatality_county<-master_county%>%
   mutate(GEOID= sprintf("%02d%03d", master_county$STATE, master_county$COUNTY))%>%
   mutate(FIPS.State.Code=substr(GEOID,1,nchar(GEOID)-3),
@@ -328,7 +300,7 @@ county_fatality <- fatality_county %>%
   filter(GEOID %in% msa$GEOID)
 
 
-years <- c(2017, 2018, 2019, 2021, 2022, 2023, 2024)
+years <- c(2019, 2021, 2022, 2023, 2024)
 
 # Function to get ACS data for each year (MAKE SURE TO REPLACE WITH STORED CENSUS FILES)
 get_county_pop <- function(year) {
@@ -386,7 +358,7 @@ ggplot(youth_tot_county_wide %>% filter(Main=="Main"), aes(x=rate_youth, y=rate_
   geom_smooth(method = "lm", se=FALSE, color='#a33428')+
   labs(
     title="Fatality rate within Central Counties",
-    subtitle = "Top 30 most populated CBSAs, 2017 - 2024",
+    subtitle = "Top 30 most populated CBSAs, 2019, 2021-2024",
     x="Child Fatality Rate (per 100,000)",
     y="Total Fatality Rate (per 100,000)"
   )+
@@ -411,7 +383,7 @@ ggplot(youth_tot_county %>% filter(Main=="Main") %>% tidyr::drop_na(),aes(x=rate
                     values = c("Total" = "grey20", "Youth" = '#a33428')) +  # adjust groups & colors as needed
   labs(
     title="Fatality rate within Central Counties",
-    subtitle = "Top 30 most populated CBSAs, 2017 - 2024",
+    subtitle = "Top 30 most populated CBSAs, 2019, 2021-2024",
     x="Fatality Rate (per 100,000)",
     y="County"
   )+
@@ -437,7 +409,7 @@ ggplot(youth_msa_county_wide , aes(x=rate_youth, y=rate_total, label=County, col
   geom_smooth(method = "lm", se=FALSE, color='black',aes(group = CBSA))+
   labs(
     title="Fatality rate within Central Counties",
-    subtitle = "Top 30 most populated CBSAs, 2017 - 2024",
+    subtitle = "Top 30 most populated CBSAs, 2019, 2021-2024",
     x="Child Fatality Rate (per 100,000)",
     y="Total Fatality Rate (per 100,000)"
   )+
@@ -460,7 +432,7 @@ ggplot(youth_msa_county_wide , aes(x=rate_youth, y=rate_total, label=County, col
   geom_smooth(method = "lm", se=FALSE, lwd=0.8)+
   labs(
     title="Fatality rate within Central Counties",
-    subtitle = "Top 30 most populated CBSAs, 2017 - 2024",
+    subtitle = "Top 30 most populated CBSAs, 2019, 2021-2024",
     x="Child Fatality Rate (per 100,000)",
     y="Total Fatality Rate (per 100,000)"
   )+

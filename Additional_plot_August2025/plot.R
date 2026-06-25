@@ -1,9 +1,9 @@
 library(tidyverse)
 
-if (!file.exists("Additional_plot_August2025/master_fatality_cbsa30.csv")) {
-  stop("Error: The file 'master_fatality_cbsa30.csv' does not exist in the working directory. Please ensure the file is available.")
+if (!file.exists("Additional_plot_August2025/master_fatality_cbsa50.csv")) {
+  stop("Error: The file 'master_fatality_cbsa50.csv' does not exist in the working directory. Please ensure the file is available.")
 }
-msa <- read.csv("Additional_plot_August2025/master_fatality_cbsa30.csv")
+msa <- read.csv("Additional_plot_August2025/master_fatality_cbsa50.csv")
 
 if (!file.exists("Additional_plot_August2025/youth_msa_county_wide_modified.csv")) {
   stop("Error: The file 'youth_msa_county_wide_modified.csv' does not exist in the working directory. Please ensure the file is available.")

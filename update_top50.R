@@ -1,12 +1,12 @@
 # ------------------------------------------------------------------
-# Update top-30 aggregate tables for year window: 2019 + 2021-2024
+# Update top-50 aggregate tables for year window: 2019 + 2021-2024
 # (excludes 2017, 2018, 2020)
 #
 # Regenerates, faithfully reusing mastercode.R methodology, only the
 # year set changes:
-#   data/master_fatality_30.csv
+#   data/master_fatality_50.csv
 #   data/master_fatality.csv                       (full table, source of top30)
-#   Additional_plot_August2025/master_fatality_cbsa30.csv  (mirror copy)
+#   Additional_plot_August2025/master_fatality_cbsa50.csv  (mirror copy)
 #   Additional_plot_August2025/youth_msa_county_wide_modified.csv
 #
 # Reuses existing data/mastersheetFARS.csv (no duckdb rebuild needed).
@@ -22,7 +22,7 @@ suppressPackageStartupMessages({
 yrs <- c(2019, 2021, 2022, 2023, 2024)
 cat("Year window:", paste(yrs, collapse = ", "), "\n")
 
-# ====================== Part A: master_fatality_30 =================
+# ====================== Part A: master_fatality_50 =================
 
 master <- read.csv("data/mastersheetFARS.csv") %>%
   filter(YEAR %in% yrs)
@@ -103,14 +103,14 @@ children_pop <- bind_rows(lapply(yrs, get_child)) %>%
 master_fatality <- left_join(master_fatality, children_pop, by = c("cbsa_code" = "GEOID")) %>%
   mutate(rate_children = fatality_children / child_pop * 100000)
 
-master_fatality_30 <- master_fatality %>%
-  arrange(desc(child_pop)) %>%
-  head(30)
+master_fatality_50 <- master_fatality %>%
+  arrange(desc(tot_pop)) %>%
+  head(50)
 
-write.csv(master_fatality_30, "data/master_fatality_30.csv")
+write.csv(master_fatality_50, "data/master_fatality_50.csv")
 write.csv(master_fatality,    "data/master_fatality.csv")
-write.csv(master_fatality_30, "Additional_plot_August2025/master_fatality_cbsa30.csv")
-cat("Wrote master_fatality_30.csv (", nrow(master_fatality_30), "rows ) and master_fatality.csv\n")
+write.csv(master_fatality_50, "Additional_plot_August2025/master_fatality_cbsa50.csv")
+cat("Wrote master_fatality_50.csv (", nrow(master_fatality_50), "rows ) and master_fatality.csv\n")
 
 # ====================== Part B: youth_msa_county_wide ==============
 
@@ -172,7 +172,7 @@ youth_tot_county_wide$NAME <- gsub("(?i)county", "", youth_tot_county_wide$NAME,
 youth_msa_county_wide <- youth_tot_county_wide %>%
   left_join(msa) %>%
   rename(CBSA = name, County = NAME) %>%
-  filter(CBSA %in% master_fatality_30$name) %>%
+  filter(CBSA %in% master_fatality_50$name) %>%
   drop_na()
 
 write.csv(youth_msa_county_wide,

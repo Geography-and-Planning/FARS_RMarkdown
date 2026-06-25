@@ -91,10 +91,10 @@ cbsa<- cbsa%>%
   rename(cbsa= `CBSA Code`,
          cbsa_name= `CBSA Title`)
 
-top_30<-read.csv("data/master_fatality_30.csv")
+top_50<-read.csv("data/master_fatality_50.csv")
 
 cbsa_top30<- cbsa%>%
-  filter(cbsa %in% top_30$cbsa_code)%>%
+  filter(cbsa %in% top_50$cbsa_code)%>%
   select(cbsa, cbsa_name, state, county)
 
 cbsa_top30$state<- as.numeric(cbsa_top30$state)
@@ -247,7 +247,7 @@ ggplot(children_adults, aes(x=walk_children, y=rate,label=cbsa_name.x))+
   geom_text_repel(size = 3, box.padding = 0.5, point.padding = 0.3)+
   labs(
     title="CBSA walking fatality rate",
-    subtitle = "Top 30 most populated, 2019, 2021-2024",
+    subtitle = "Top 50 most populated, 2019, 2021-2024",
     x="Children walking Fatality Rate (per 100,000)",
     y="Total walking Fatality Rate (per 100,000)"
   )+
@@ -292,7 +292,7 @@ ggplot(walk2, aes(x=children, y=adults, label=cbsa_name.x))+
   geom_text_repel(size = 3, box.padding = 0.5, point.padding = 0.3)+
   labs(
     title="CBSA walking fatality percentage",
-    subtitle = "Top 30 most populated, 2019, 2021-2024",
+    subtitle = "Top 50 most populated, 2019, 2021-2024",
     x="Children walking Fatality percentage (%)",
     y="Total walking Fatality percentage (%)"
   )+
@@ -324,7 +324,7 @@ ggplot(longer, aes(x=children, y=adults, label=cbsa_name.x))+
   geom_text_repel(size = 3, box.padding = 0.5, point.padding = 0.3)+
   labs(
     title="CBSA walking fatality percentage",
-    subtitle = "Top 30 most populated, 2019, 2021-2024",
+    subtitle = "Top 50 most populated, 2019, 2021-2024",
     x="Children walking Fatality percentage (%)",
     y="Total walking Fatality percentage (%)"
   )+
@@ -361,7 +361,7 @@ ggplot(longer2, aes(x=children, y=adults, label=cbsa_name.x))+
   geom_text_repel(size = 3, box.padding = 0.5, point.padding = 0.3)+
   labs(
     title="CBSA fatality rate by mode",
-    subtitle = "Top 30 most populated, 2019, 2021-2024",
+    subtitle = "Top 50 most populated, 2019, 2021-2024",
     x="Children Fatality Rate (per 100,000)",
     y="Total Fatality Rate (per 100,000)"
   )+

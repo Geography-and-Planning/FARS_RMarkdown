@@ -226,14 +226,14 @@ master_fatality<-left_join(master_fatality, children_pop, by=c("cbsa_code"="GEOI
   mutate(rate_children=fatality_children/child_pop*100000)
 
 
-master_fatality_30<-master_fatality%>%
-  arrange(desc(child_pop))%>%
-  head(30)
+master_fatality_50<-master_fatality%>%
+  arrange(desc(tot_pop))%>%
+  head(50)
 
 # export the sheet with top 30 and overall
-write.csv(master_fatality_30, "data/master_fatality_30.csv")
+write.csv(master_fatality_50, "data/master_fatality_50.csv")
 write.csv(master_fatality, "data/master_fatality.csv")
-write.csv(master_fatality_30, "Additional_plot_August2025/master_fatality_cbsa30.csv")
+write.csv(master_fatality_50, "Additional_plot_August2025/master_fatality_cbsa50.csv")
 
 
 # plot
@@ -242,7 +242,7 @@ ggplot(master_fatality, aes(x=rate_children, y=rate_overall))+
   geom_smooth(method = "lm", se=FALSE)+
   labs(
     title="CBSA fatality rate",
-    subtitle = "Top 30 most populated, 2019, 2021-2024",
+    subtitle = "Top 50 most populated, 2019, 2021-2024",
     x="Children Fatality Rate (per 100,000)",
     y="Total Fatality Rate (per 100,000)"
   )+
@@ -260,13 +260,13 @@ ggplot(master_fatality, aes(x=rate_children, y=rate_overall))+
 
 
 library(ggrepel)
-ggplot(master_fatality_30, aes(x=rate_children, y=rate_overall,label=name))+
+ggplot(master_fatality_50, aes(x=rate_children, y=rate_overall,label=name))+
   geom_point()+
   geom_smooth(method = "lm", se=FALSE)+
   geom_text_repel(size = 3, box.padding = 0.5, point.padding = 0.3)+
   labs(
     title="CBSA fatality rate",
-    subtitle = "Top 30 most populated, 2019, 2021-2024",
+    subtitle = "Top 50 most populated, 2019, 2021-2024",
     x="Children Fatality Rate (per 100,000)",
     y="Total Fatality Rate (per 100,000)"
   )+
@@ -358,7 +358,7 @@ ggplot(youth_tot_county_wide %>% filter(Main=="Main"), aes(x=rate_youth, y=rate_
   geom_smooth(method = "lm", se=FALSE, color='#a33428')+
   labs(
     title="Fatality rate within Central Counties",
-    subtitle = "Top 30 most populated CBSAs, 2019, 2021-2024",
+    subtitle = "Top 50 most populated CBSAs, 2019, 2021-2024",
     x="Child Fatality Rate (per 100,000)",
     y="Total Fatality Rate (per 100,000)"
   )+
@@ -383,7 +383,7 @@ ggplot(youth_tot_county %>% filter(Main=="Main") %>% tidyr::drop_na(),aes(x=rate
                     values = c("Total" = "grey20", "Youth" = '#a33428')) +  # adjust groups & colors as needed
   labs(
     title="Fatality rate within Central Counties",
-    subtitle = "Top 30 most populated CBSAs, 2019, 2021-2024",
+    subtitle = "Top 50 most populated CBSAs, 2019, 2021-2024",
     x="Fatality Rate (per 100,000)",
     y="County"
   )+
@@ -399,7 +399,7 @@ ggplot(youth_tot_county %>% filter(Main=="Main") %>% tidyr::drop_na(),aes(x=rate
     legend.key.size = unit(0.6, "lines")
   )
 
-youth_msa_county_wide <- youth_tot_county_wide%>% left_join(msa) %>% rename(CBSA=name, County=NAME) %>% filter(CBSA%in%master_fatality_30$name) %>% drop_na()
+youth_msa_county_wide <- youth_tot_county_wide%>% left_join(msa) %>% rename(CBSA=name, County=NAME) %>% filter(CBSA%in%master_fatality_50$name) %>% drop_na()
 
 write.csv(youth_msa_county_wide, "Additional_plot_August2025/youth_msa_county_wide_modified.csv", row.names = FALSE)
 youth_msa_county_wide$Main <- as.factor(youth_msa_county_wide$Main)
@@ -409,7 +409,7 @@ ggplot(youth_msa_county_wide , aes(x=rate_youth, y=rate_total, label=County, col
   geom_smooth(method = "lm", se=FALSE, color='black',aes(group = CBSA))+
   labs(
     title="Fatality rate within Central Counties",
-    subtitle = "Top 30 most populated CBSAs, 2019, 2021-2024",
+    subtitle = "Top 50 most populated CBSAs, 2019, 2021-2024",
     x="Child Fatality Rate (per 100,000)",
     y="Total Fatality Rate (per 100,000)"
   )+
@@ -432,7 +432,7 @@ ggplot(youth_msa_county_wide , aes(x=rate_youth, y=rate_total, label=County, col
   geom_smooth(method = "lm", se=FALSE, lwd=0.8)+
   labs(
     title="Fatality rate within Central Counties",
-    subtitle = "Top 30 most populated CBSAs, 2019, 2021-2024",
+    subtitle = "Top 50 most populated CBSAs, 2019, 2021-2024",
     x="Child Fatality Rate (per 100,000)",
     y="Total Fatality Rate (per 100,000)"
   )+

@@ -267,11 +267,11 @@ master_fatality<-left_join(master_fatality, children_pop, by=c("cbsa_code"="GEOI
 ```
 
 ```{r}
-master_fatality_30<-master_fatality%>%
-  arrange(desc(child_pop))%>%
-  head(30)
+master_fatality_50<-master_fatality%>%
+  arrange(desc(tot_pop))%>%
+  head(50)
 
-write.csv(master_fatality_30, "data/master_fatality_30.csv")
+write.csv(master_fatality_50, "data/master_fatality_50.csv")
 write.csv(master_fatality, "data/master_fatality.csv")
 ```
 
@@ -281,7 +281,7 @@ ggplot(master_fatality, aes(x=rate_children, y=rate_overall))+
   geom_smooth(method = "lm", se=FALSE)+
   labs(
     title="CBSA fatality rate",
-    subtitle = "Top 30 most populated, 2019, 2021-2024",
+    subtitle = "Top 50 most populated, 2019, 2021-2024",
     x="Children Fatality Rate (per 100,000)",
     y="Total Fatality Rate (per 100,000)"
   )+
@@ -300,13 +300,13 @@ ggplot(master_fatality, aes(x=rate_children, y=rate_overall))+
 
 ```{r, message=FALSE, warning=FALSE, fig.width=10, fig.height=6}
 library(ggrepel)
-ggplot(master_fatality_30, aes(x=rate_children, y=rate_overall,label=name))+
+ggplot(master_fatality_50, aes(x=rate_children, y=rate_overall,label=name))+
   geom_point()+
   geom_smooth(method = "lm", se=FALSE)+
   geom_text_repel(size = 3, box.padding = 0.5, point.padding = 0.3)+
   labs(
     title="CBSA fatality rate",
-    subtitle = "Top 30 most populated, 2019, 2021-2024",
+    subtitle = "Top 50 most populated, 2019, 2021-2024",
     x="Children Fatality Rate (per 100,000)",
     y="Total Fatality Rate (per 100,000)"
   )+
@@ -418,7 +418,7 @@ ggplot(youth_tot_county_wide %>% filter(Main=="Main"), aes(x=rate_youth, y=rate_
   geom_smooth(method = "lm", se=FALSE, color='#a33428')+
   labs(
   title="Fatality rate within Central Counties",
-    subtitle = "Top 30 most populated CBSAs, 2019, 2021-2024",
+    subtitle = "Top 50 most populated CBSAs, 2019, 2021-2024",
     x="Child Fatality Rate (per 100,000)",
     y="Total Fatality Rate (per 100,000)"
   )+
@@ -445,7 +445,7 @@ scale_fill_manual(name = "Aggregation",
                      values = c("Total" = "grey20", "Youth" = '#a33428')) +  # adjust groups & colors as needed
   labs(
     title="Fatality rate within Central Counties",
-    subtitle = "Top 30 most populated CBSAs, 2019, 2021-2024",
+    subtitle = "Top 50 most populated CBSAs, 2019, 2021-2024",
     x="Fatality Rate (per 100,000)",
     y="County"
   )+
@@ -463,7 +463,7 @@ scale_fill_manual(name = "Aggregation",
 ```
 
 ```{r warning=FALSE, message=FALSE, fig.heigh=7. fig.width=11}
-youth_msa_county_wide <- youth_tot_county_wide%>% left_join(msa) %>% rename(CBSA=name, County=NAME) %>% filter(CBSA%in%master_fatality_30$name) %>% drop_na()
+youth_msa_county_wide <- youth_tot_county_wide%>% left_join(msa) %>% rename(CBSA=name, County=NAME) %>% filter(CBSA%in%master_fatality_50$name) %>% drop_na()
 youth_msa_county_wide$Main <- as.factor(youth_msa_county_wide$Main)
 youth_msa_county_wide$County <- as.factor(youth_msa_county_wide$County)
 ggplot(youth_msa_county_wide , aes(x=rate_youth, y=rate_total, label=County, color= Main,group = CBSA))+
@@ -471,7 +471,7 @@ ggplot(youth_msa_county_wide , aes(x=rate_youth, y=rate_total, label=County, col
   geom_smooth(method = "lm", se=FALSE, color='black',aes(group = CBSA))+
   labs(
   title="Fatality rate within Central Counties",
-    subtitle = "Top 30 most populated CBSAs, 2019, 2021-2024",
+    subtitle = "Top 50 most populated CBSAs, 2019, 2021-2024",
     x="Child Fatality Rate (per 100,000)",
     y="Total Fatality Rate (per 100,000)"
   )+
@@ -496,7 +496,7 @@ ggplot(youth_msa_county_wide , aes(x=rate_youth, y=rate_total, label=County, col
   geom_smooth(method = "lm", se=FALSE, lwd=0.8)+
   labs(
   title="Fatality rate within Central Counties",
-    subtitle = "Top 30 most populated CBSAs, 2019, 2021-2024",
+    subtitle = "Top 50 most populated CBSAs, 2019, 2021-2024",
     x="Child Fatality Rate (per 100,000)",
     y="Total Fatality Rate (per 100,000)"
   )+
